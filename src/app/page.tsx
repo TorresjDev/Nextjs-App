@@ -1,6 +1,6 @@
 export default function Home() {
 	return (
-		<div className="min-h-screen flex flex-col p-8 bg-slate-900">
+		<div className="min-h-screen flex flex-col p-8 bg-inherit bg-blur">
 			<main className="flex flex-col gap-8 items-center sm:items-start">
 				<h1 className="text-4xl font-bold text-center sm:text-left">
 					Welcome to My Walkthrough Guide
@@ -27,9 +27,9 @@ export default function Home() {
 				</div>
 			</main>
 
-			<footer className="mt-12 text-center text-gray-500">
+			{/* <footer className="mt-12 text-center text-gray-500">
 				Built with ❤️ using Next.js.
-			</footer>
+			</footer> */}
 		</div>
 	);
 }

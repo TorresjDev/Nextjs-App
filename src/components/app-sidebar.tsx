@@ -1,5 +1,11 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
-
+import {
+	Calendar,
+	ChevronRight,
+	Home,
+	Inbox,
+	Search,
+	Settings,
+} from "lucide-react";
 import {
 	Sidebar,
 	SidebarContent,
@@ -9,34 +15,52 @@ import {
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
+	SidebarMenuSub,
+	SidebarMenuSubItem,
 } from "@/components/ui/sidebar";
+import {
+	Collapsible,
+	CollapsibleTrigger,
+	CollapsibleContent,
+} from "@/components/ui/collapsible";
 
-// Menu items.
+// Menu items with optional submenus
 const items = [
 	{
 		title: "Home",
-		url: "#",
+		url: "/",
 		icon: Home,
+		submenu: null,
 	},
 	{
-		title: "Inbox",
-		url: "#",
+		title: "GitHub",
+		url: "/github",
 		icon: Inbox,
+		submenu: [
+			{ title: "Create Repository", url: "/create-repo" },
+			// { title: "Notifications", url: "#notifications" },
+		],
 	},
 	{
 		title: "Calendar",
 		url: "#",
 		icon: Calendar,
+		submenu: null,
 	},
 	{
 		title: "Search",
 		url: "#",
 		icon: Search,
+		submenu: null,
 	},
 	{
 		title: "Settings",
 		url: "#",
 		icon: Settings,
+		submenu: [
+			{ title: "Profile", url: "#profile" },
+			{ title: "Account", url: "#account" },
+		],
 	},
 ];
 
@@ -49,14 +73,41 @@ export function AppSidebar() {
 					<SidebarGroupContent>
 						<SidebarMenu>
 							{items.map((item) => (
-								<SidebarMenuItem key={item.title}>
-									<SidebarMenuButton asChild>
-										<a href={item.url}>
-											<item.icon />
-											<span>{item.title}</span>
-										</a>
-									</SidebarMenuButton>
-								</SidebarMenuItem>
+								<Collapsible
+									key={item.title}
+									defaultOpen={!item.submenu}
+									className="group/collapsible"
+								>
+									<SidebarMenuItem>
+										<CollapsibleTrigger asChild>
+											<div className="flex items-center gap-2">
+												<SidebarMenuButton asChild>
+													<div>
+														<item.icon />
+														<span>{item.title}</span>
+													</div>
+												</SidebarMenuButton>
+												<ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+											</div>
+										</CollapsibleTrigger>
+										{item.submenu && (
+											<CollapsibleContent>
+												<SidebarMenuSub>
+													{item.submenu.map((subItem) => (
+														<SidebarMenuSubItem key={subItem.title}>
+															<a
+																href={`${item.url}/${subItem.url}`}
+																className="ml-6 text-sm text-gray-600 hover:text-gray-900"
+															>
+																{subItem.title}
+															</a>
+														</SidebarMenuSubItem>
+													))}
+												</SidebarMenuSub>
+											</CollapsibleContent>
+										)}
+									</SidebarMenuItem>
+								</Collapsible>
 							))}
 						</SidebarMenu>
 					</SidebarGroupContent>

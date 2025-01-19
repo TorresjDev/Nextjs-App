@@ -14,7 +14,7 @@ export default function App() {
 			<Link href="/">
 				<NavbarBrand>
 					<Image
-						src="https://torresjdev.github.io/assets-host/assets/icons/dev/dev-1.svg"
+						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/dev/dev-1.svg"
 						alt="jt dev logo"
 						width="33"
 						height="33"
