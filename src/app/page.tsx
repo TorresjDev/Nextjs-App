@@ -10,21 +10,6 @@ export default function Home() {
 					and manage your software projects effortlessly. Navigate between
 					guides using the breadcrumb navigation or the links below.
 				</p>
-
-				<div className="flex flex-col gap-4 sm:flex-row">
-					<a
-						className="rounded-md bg-blue-500 text-white px-4 py-2 hover:bg-blue-600"
-						href="/github"
-					>
-						GitHub Walkthrough
-					</a>
-					<a
-						className="rounded-md bg-green-500 text-white px-4 py-2 hover:bg-green-600"
-						href="/nextjs"
-					>
-						Next.js Walkthrough
-					</a>
-				</div>
 			</main>
 
 			{/* <footer className="mt-12 text-center text-gray-500">
