@@ -1,5 +1,6 @@
 // components/Footer.js
 
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -18,27 +19,30 @@ const Footer = () => {
 					<div className="flex space-x-4 mt-4">
 						{/* Social Media Icons */}
 						<a
-							href="https://github.com/your-profile"
+							href="https://github.com/TorresjDev"
 							target="_blank"
-							className="hover:text-yellow-500"
 							aria-label="GitHub"
 						>
-							<i className="fab fa-github text-2xl"></i>
+							<Image
+								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg"
+								alt="github-image"
+								className="hover:w-[26px]"
+								width={24}
+								height={24}
+							></Image>
 						</a>
 						<a
-							href="https://linkedin.com/in/your-profile"
+							href="https://linkedin.com/in/torresjdev"
 							target="_blank"
-							className="hover:text-yellow-500"
 							aria-label="LinkedIn"
 						>
-							<i className="fab fa-linkedin text-2xl"></i>
-						</a>
-						<a
-							href="mailto:your-email@example.com"
-							className="hover:text-yellow-500"
-							aria-label="Email"
-						>
-							<i className="fas fa-envelope text-2xl"></i>
+							<Image
+								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/linkedIn.svg"
+								alt="github-image"
+								className="hover:w-[26px]"
+								width={24}
+								height={24}
+							></Image>
 						</a>
 					</div>
 				</div>
@@ -53,11 +57,15 @@ const Footer = () => {
 							</Link>
 						</li>
 						<li>
-							<a href="/portfolio" className="hover:text-yellow-500">
+							<a
+								href="https://tiny.cc/Jtorres_dev"
+								target="_blank"
+								className="hover:text-yellow-500"
+							>
 								Portfolio
 							</a>
 						</li>
-						<li>
+						{/* <li>
 							<a href="/blog" className="hover:text-yellow-500">
 								Blog
 							</a>
@@ -66,7 +74,7 @@ const Footer = () => {
 							<a href="/contact" className="hover:text-yellow-500">
 								Contact
 							</a>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 
@@ -121,10 +129,10 @@ const Footer = () => {
 					</p>
 					<p className="mt-2">
 						<a
-							href="mailto:your-email@example.com"
+							href="mailto:j.torres3.dev@gmail.com"
 							className="hover:text-yellow-500"
 						>
-							your-email@example.com
+							j.torres3.dev@gmail.com
 						</a>
 					</p>
 				</div>
