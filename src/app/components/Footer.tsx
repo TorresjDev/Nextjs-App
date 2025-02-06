@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
 	return (
-		<footer className="bg-transparent bg-blur text-[#C0C0C0]/90 py-10 border-t border-[#C0C0C0]/60 fixed bottom-0 justify-self-center w-full">
+		<footer className="bg-transparent bg-blur text-[#C0C0C0]/90 py-8 border-t border-[#C0C0C0]/60 fixed bottom-0 justify-self-center w-full">
 			{/* Footer Content */}
 			<div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-8">
 				{/* About Me Section */}
