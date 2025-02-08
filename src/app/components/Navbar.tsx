@@ -17,7 +17,7 @@ const Navbar = () => {
 									alt="fire giphy"
 									className="pb-2"
 								/>{" "}
-								&nbsp; Support My Journey{" "}
+								&nbsp; <span className="p-1">Support My Journey</span>{" "}
 							</h1>
 						</Link>
 					</div>
