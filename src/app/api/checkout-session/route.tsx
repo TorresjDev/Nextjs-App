@@ -26,7 +26,11 @@ export async function POST(request: Request) {
 					quantity: 1,
 				},
 			],
-			success_url: `${request.headers.get("origin")}/thank-you`,
+			success_url: `${request.headers.get(
+				"origin"
+			)}/thank-you?method=stripe&amount=${
+				body.amount
+			}&transactionId={CHECKOUT_SESSION_ID}`,
 			cancel_url: `${request.headers.get("origin")}`,
 		});
 
