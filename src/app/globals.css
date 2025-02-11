@@ -76,3 +76,20 @@ body {
 		background-position: 0% 75%;
 	}
 }
+
+@media print {
+	body {
+		background: white !important;
+	}
+
+	.no-print {
+		display: none !important;
+	}
+
+	.print-section {
+		box-shadow: none !important;
+		border: none !important;
+		background: white !important;
+		color: black !important;
+	}
+}

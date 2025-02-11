@@ -38,6 +38,7 @@ export async function POST(request: Request) {
 				},
 			}
 		);
+		console.log({ response });
 
 		// Return the hosted payment page URL
 		return NextResponse.json({ hosted_url: response.data.data.hosted_url });
