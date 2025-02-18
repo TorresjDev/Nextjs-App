@@ -18,7 +18,7 @@ const StripeDonation = () => {
 
 		const stripe = await stripePromise;
 
-		const response = await fetch("/api/checkout-session", {
+		const response = await fetch("/api/stripe-payment/donate-checkout", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

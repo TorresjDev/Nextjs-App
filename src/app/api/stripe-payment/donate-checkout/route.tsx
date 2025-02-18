@@ -11,14 +11,12 @@ export async function POST(request: Request) {
 
 		// Create a checkout session
 		const session = await stripe.checkout.sessions.create({
-			payment_method_types: ["card"],
-			mode: "payment",
 			line_items: [
 				{
 					price_data: {
 						currency: "usd",
 						product_data: {
-							name: "Support My Journey Donation",
+							name: "Support My Journey - Donation",
 							description: "A contribution to support my development projects.",
 						},
 						unit_amount: body.amount * 100, // Convert dollars to cents
@@ -26,14 +24,14 @@ export async function POST(request: Request) {
 					quantity: 1,
 				},
 			],
+			mode: "payment",
 			success_url: `${request.headers.get(
 				"origin"
-			)}/thank-you?method=stripe&amount=${
-				body.amount
-			}&transactionId={CHECKOUT_SESSION_ID}`,
-			cancel_url: `${request.headers.get("origin")}`,
+			)}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+			cancel_url: `${request.headers.get("origin")}/cancel`,
 		});
 
+		// Return session ID & redirect URL
 		return NextResponse.json({ id: session.id });
 	} catch (error) {
 		console.error(error);
