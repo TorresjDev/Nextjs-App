@@ -36,7 +36,7 @@ export default function RootLayout({
 				>
 					<SidebarProvider>
 						<AppSidebar />
-						<main>
+						<main className="min-h-[calc(100vh-64px)] ml-[10px] relative flex top-14">
 							<SidebarTrigger />
 							{children}
 						</main>

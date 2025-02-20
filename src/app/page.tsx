@@ -11,10 +11,6 @@ export default function Home() {
 					guides using the breadcrumb navigation or the links below.
 				</p>
 			</main>
-
-			{/* <footer className="mt-12 text-center text-gray-500">
-				Built with ❤️ using Next.js.
-			</footer> */}
 		</div>
 	);
 }
