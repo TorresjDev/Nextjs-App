@@ -8,9 +8,7 @@ import Image from "next/image";
 
 export default function App() {
 	return (
-		<Navbar
-			className="absolute top-0 left-0 w-full z-[60] bg-transparent" // Increased z-index to ensure it’s on top
-		>
+		<Navbar className="absolute top-0 left-0 w-full z-[60] bg-transparent">
 			{/* <NavbarContent justify="start"> */}
 			<Link href="/">
 				<NavbarBrand>

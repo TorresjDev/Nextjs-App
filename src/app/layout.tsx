@@ -41,8 +41,8 @@ export default function RootLayout({
 							{children}
 						</main>
 					</SidebarProvider>
-					<Footer />
 				</ThemeProvider>
+				<Footer />
 			</body>
 		</html>
 	);
