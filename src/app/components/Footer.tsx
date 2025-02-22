@@ -1,22 +1,114 @@
 // components/Footer.js
-
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
 	return (
-		<footer className="bg-transparent bg-blur z-[90] text-gray-300 py-10 border-t border-gray-700">
+		<footer className="bg-transparent bg-blur text-[#C0C0C0]/90 py-8 border-t border-[#C0C0C0]/60 relative bottom-0 justify-self-center w-full">
 			{/* Footer Content */}
 			<div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-4 gap-8">
 				{/* About Me Section */}
 				<div>
-					<h2 className="text-2xl font-bold text-yellow-500 mb-4">About Me</h2>
-					<p className="text-gray-400">
-						Hi, I’m Jesus Torres, a software developer passionate about creating
-						modern web and mobile applications. Explore my work and connect with
-						me to learn more.
+					<h2 className="text-2xl font-bold text-[#DAA520]/90 mb-4">
+						About Me
+					</h2>
+					<p>
+						Hi, I’m <span className=" text-[#DAA520]">Jesus Torres</span>, a
+						software developer passionate about creating modern web and mobile
+						applications. Explore my work and connect with me to learn more.
 					</p>
-					<div className="flex space-x-4 mt-4">
+				</div>
+
+				{/* Navigation Section */}
+				<div className="ms-12">
+					<h3 className="font-bold text-[#DAA520]/90 mb-3">Navigate</h3>
+					<ul className="space-y-2">
+						<li>
+							<Link href="/" className="hover:text-[#DAA520]">
+								Home
+							</Link>
+						</li>
+						<li>
+							<a
+								href="https://tiny.cc/Jtorres_dev"
+								target="_blank"
+								className="hover:text-[#DAA520]"
+							>
+								Portfolio
+							</a>
+						</li>
+						{/* <li>
+							<a href="/blog" className="hover:text-[#DAA520]">
+								Blog
+							</a>
+						</li>
+						<li>
+							<a href="/contact" className="hover:text-[#DAA520]">
+								Contact
+							</a>
+						</li> */}
+					</ul>
+				</div>
+
+				{/* Resources Section */}
+				<div>
+					<h3 className="font-bold text-[#DAA520]/90 mb-3">Resources</h3>
+					<ul className="space-y-2">
+						<li>
+							<a
+								href="https://nextjs.org"
+								target="_blank"
+								className="hover:text-[#DAA520]"
+							>
+								Next.js
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://tailwindcss.com"
+								target="_blank"
+								className="hover:text-[#DAA520]"
+							>
+								Tailwind CSS
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://reactjs.org"
+								target="_blank"
+								className="hover:text-[#DAA520]"
+							>
+								React
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://developer.mozilla.org"
+								target="_blank"
+								className="hover:text-[#DAA520]"
+							>
+								MDN Web Docs
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				{/* Contact Section */}
+				<div>
+					<h3 className="font-bold text-[#DAA520]/90 mb-3">Contact</h3>
+					<p className="text-gray-400">
+						Have a question or want to work together?
+					</p>
+					<p className="mt-2">
+						<a
+							href="mailto:j.torres3.dev@gmail.com"
+							className="hover:text-[#DAA520]"
+						>
+							j.torres3.dev@gmail.com
+						</a>
+					</p>
+					<h3 className="font-bold text-[#DAA520]/90 mb-3 my-3">Connect</h3>
+					<div className="flex space-x-4 ">
 						{/* Social Media Icons */}
 						<a
 							href="https://github.com/TorresjDev"
@@ -46,101 +138,12 @@ const Footer = () => {
 						</a>
 					</div>
 				</div>
-
-				{/* Navigation Section */}
-				<div>
-					<h3 className="font-bold text-yellow-500 mb-4">Navigate</h3>
-					<ul className="space-y-2">
-						<li>
-							<Link href="/" className="hover:text-yellow-500">
-								Home
-							</Link>
-						</li>
-						<li>
-							<a
-								href="https://tiny.cc/Jtorres_dev"
-								target="_blank"
-								className="hover:text-yellow-500"
-							>
-								Portfolio
-							</a>
-						</li>
-						{/* <li>
-							<a href="/blog" className="hover:text-yellow-500">
-								Blog
-							</a>
-						</li>
-						<li>
-							<a href="/contact" className="hover:text-yellow-500">
-								Contact
-							</a>
-						</li> */}
-					</ul>
-				</div>
-
-				{/* Resources Section */}
-				<div>
-					<h3 className="font-bold text-yellow-500 mb-4">Resources</h3>
-					<ul className="space-y-2">
-						<li>
-							<a
-								href="https://nextjs.org"
-								target="_blank"
-								className="hover:text-yellow-500"
-							>
-								Next.js
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://tailwindcss.com"
-								target="_blank"
-								className="hover:text-yellow-500"
-							>
-								Tailwind CSS
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://reactjs.org"
-								target="_blank"
-								className="hover:text-yellow-500"
-							>
-								React
-							</a>
-						</li>
-						<li>
-							<a
-								href="https://developer.mozilla.org"
-								target="_blank"
-								className="hover:text-yellow-500"
-							>
-								MDN Web Docs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				{/* Contact Section */}
-				<div>
-					<h3 className="font-bold text-yellow-500 mb-4">Contact</h3>
-					<p className="text-gray-400">
-						Have a question or want to work together?
-					</p>
-					<p className="mt-2">
-						<a
-							href="mailto:j.torres3.dev@gmail.com"
-							className="hover:text-yellow-500"
-						>
-							j.torres3.dev@gmail.com
-						</a>
-					</p>
-				</div>
 			</div>
 
 			{/* Footer Bottom */}
-			<div className="text-center text-gray-500 mt-10">
+			<div className="text-center text-[#C0C0C0]-500 mt-3">
 				<p>
+					Complete - Full Stack Software Developer: Walkthrough Guide <br></br>{" "}
 					&copy; {new Date().getFullYear()} Jesus Torres. All rights reserved.
 				</p>
 			</div>

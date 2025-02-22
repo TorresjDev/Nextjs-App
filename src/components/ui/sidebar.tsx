@@ -269,7 +269,7 @@ const SidebarTrigger = React.forwardRef<
 			data-sidebar="trigger"
 			variant="ghost"
 			size="icon"
-			className={cn("h-10 w-6 mt-1 hover:text-[#DAA520]/90", className)}
+			className={cn("h-10 w-9 m-3 hover:text-[#DAA520]/90", className)}
 			onClick={(event) => {
 				onClick?.(event);
 				toggleSidebar();
@@ -700,7 +700,13 @@ SidebarMenuSub.displayName = "SidebarMenuSub";
 const SidebarMenuSubItem = React.forwardRef<
 	HTMLLIElement,
 	React.ComponentProps<"li">
->(({ ...props }, ref) => <li ref={ref} {...props} />);
+>(({ ...props }, ref) => (
+	<li
+		className=" rounded-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:text-[#C0C0C0] "
+		ref={ref}
+		{...props}
+	/>
+));
 SidebarMenuSubItem.displayName = "SidebarMenuSubItem";
 
 const SidebarMenuSubButton = React.forwardRef<

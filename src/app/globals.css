@@ -78,3 +78,9 @@ body {
 		background-position: 0% 75%;
 	}
 }
+
+/* required for full width navbar */
+nav > header {
+	max-width: 100vw !important;
+	margin-left: 3rem;
+}

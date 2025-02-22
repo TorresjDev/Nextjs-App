@@ -111,7 +111,7 @@ export function AppSidebar() {
 														<SidebarMenuSubItem key={subItem.title}>
 															<a
 																href={`${item.url}/${subItem.url}`}
-																className="ml-6 text-sm text-gray-600 hover:text-gray-900"
+																className="ml-6 text-sm text-[#C0C0C0]/80"
 															>
 																{subItem.title}
 															</a>

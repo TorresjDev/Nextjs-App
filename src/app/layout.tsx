@@ -25,8 +25,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`gradient-background ${inter.className}`}>
-				<div className="gradient-background"></div>{" "}
-				{/* Add floating light here */}
+				<div className="gradient-background"></div>
 				<Navigation />
 				<ThemeProvider
 					attribute="class"
@@ -36,7 +35,7 @@ export default function RootLayout({
 				>
 					<SidebarProvider>
 						<AppSidebar />
-						<main className="min-h-[calc(100vh-64px)] ml-[10px] relative flex top-14">
+						<main className="min-h-full ml-[10px] relative flex top-14">
 							<SidebarTrigger />
 							{children}
 						</main>
