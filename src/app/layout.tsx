@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { ThemeProvider } from "./provider";
 import Navigation from "./components/Navigation";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { AppSidebar } from "@/app/components/app-sidebar";
 import Footer from "./components/Footer";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,9 +36,9 @@ export default function RootLayout({
 				>
 					<SidebarProvider>
 						<AppSidebar />
-						<main className="min-h-full ml-[10px] relative flex top-14">
+						<main className="max-h-full ml-[10px] mt-16 flex flex-1">
 							<SidebarTrigger />
-							{children}
+							<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
 						</main>
 					</SidebarProvider>
 				</ThemeProvider>
