@@ -3,9 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import Navigation from "./components/Navigation";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
+import { AppSidebar } from "@/app/components/app-sidebar";
 import Footer from "./components/Footer";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`gradient-background ${inter.className}`}>
-				<div className="gradient-background"></div>{" "}
-				{/* Add floating light here */}
+				<div className="gradient-background"></div>
 				<Navigation />
 				<ThemeProvider
 					attribute="class"
@@ -35,14 +35,16 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<SidebarProvider>
-						<AppSidebar />
-						<main>
-							<SidebarTrigger />
-							{children}
-						</main>
+						<div className="flex">
+							<AppSidebar />
+							<main className="max-h-full ml-[10px] mt-16 flex flex-1">
+								<SidebarTrigger />
+								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+							</main>
+						</div>
 					</SidebarProvider>
-					<Footer />
 				</ThemeProvider>
+				<Footer />
 			</body>
 		</html>
 	);
