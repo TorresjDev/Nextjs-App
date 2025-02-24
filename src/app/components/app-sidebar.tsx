@@ -55,8 +55,12 @@ export function AppSidebar() {
 																src={item.icon}
 																width={20}
 																height={20}
-																alt="icon"
-																className="rounded"
+																alt={`${item.title} icon`}
+																className={`rounded-full ${
+																	item.title === "Database"
+																		? "bg-[#FFFFFF] "
+																		: "bg-transparent"
+																}`}
 															/>
 															<span>{item.title}</span>
 														</div>
