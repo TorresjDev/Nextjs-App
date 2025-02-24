@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // ✅ Correct way to track URL
+import { usePathname } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 import {
 	Sidebar,
@@ -20,28 +20,10 @@ import {
 	CollapsibleTrigger,
 	CollapsibleContent,
 } from "../components/ui/collapsible";
-
-// Menu items with optional submenus
-const items = [
-	{
-		title: "GitHub",
-		url: "/github",
-		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg",
-		submenu: [
-			{ title: "Create Repository", url: "/github/create-repo" },
-			{ title: "Rules Setup", url: "/github/rules-setup" },
-		],
-	},
-	{
-		title: "Next.js",
-		url: "/nextjs",
-		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [{ title: "Walkthrough", url: "/nextjs/walkthrough" }],
-	},
-];
+import { items } from "@/lib/data";
 
 export function AppSidebar() {
-	const pathname = usePathname(); // ✅ Correct Next.js App Router method
+	const pathname = usePathname();
 
 	return (
 		<Sidebar>
@@ -51,8 +33,12 @@ export function AppSidebar() {
 					<SidebarGroupContent>
 						<SidebarMenu>
 							{items.map((item) => {
-								const isActive = pathname.startsWith(item.url);
 								const hasSubmenu = item.submenu && item.submenu.length > 0;
+								const isActive =
+									hasSubmenu &&
+									item.submenu.some((subItem) =>
+										pathname.startsWith(subItem.url)
+									);
 
 								return (
 									<Collapsible
@@ -62,9 +48,9 @@ export function AppSidebar() {
 									>
 										<SidebarMenuItem>
 											<CollapsibleTrigger asChild>
-												<div className="flex items-center gap-2">
+												<div className="flex items-center gap-2 cursor-pointer">
 													<SidebarMenuButton asChild isActive={isActive}>
-														<Link href={item.url}>
+														<div>
 															<Image
 																src={item.icon}
 																width={20}
@@ -73,7 +59,7 @@ export function AppSidebar() {
 																className="rounded"
 															/>
 															<span>{item.title}</span>
-														</Link>
+														</div>
 													</SidebarMenuButton>
 													{hasSubmenu && (
 														<ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />

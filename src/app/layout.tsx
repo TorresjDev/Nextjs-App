@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css";
+import "./globals.css";
 import { ThemeProvider } from "./provider";
 import Navigation from "./components/Navigation";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
@@ -35,11 +35,13 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<SidebarProvider>
-						<AppSidebar />
-						<main className="max-h-full ml-[10px] mt-16 flex flex-1">
-							<SidebarTrigger />
-							<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-						</main>
+						<div className="flex">
+							<AppSidebar />
+							<main className="max-h-full ml-[10px] mt-16 flex flex-1">
+								<SidebarTrigger />
+								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+							</main>
+						</div>
 					</SidebarProvider>
 				</ThemeProvider>
 				<Footer />
