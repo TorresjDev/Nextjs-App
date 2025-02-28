@@ -10,6 +10,7 @@ export const items = [
 		submenu: [
 			{ title: "Create Repository", url: "/guides/github/create-repo" },
 			{ title: "Rules Setup", url: "/guides/github/rules-setup" },
+			{ title: "Git  Commands", url: "/guides/github/git-commands" },
 		],
 	},
 	{
