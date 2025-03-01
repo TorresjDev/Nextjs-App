@@ -3,8 +3,8 @@
 
 export default function WalkthroughPage() {
 	return (
-		<div className="prose bg-slate-300 mx-auto p-8 max-w-[75vw]">
+		<article className="prose bg-slate-300 mx-auto p-8 max-w-[75vw]">
 			{/* <Walkthrough /> */}
-		</div>
+		</article>
 	);
 }

@@ -10,11 +10,14 @@ export const items = [
 		submenu: [
 			{ title: "Create Repository", url: "/guides/github/create-repo" },
 			{ title: "Rules Setup", url: "/guides/github/rules-setup" },
+			{ title: "Git  Commands", url: "/guides/github/git-commands" },
 		],
 	},
 	{
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [{ title: "Walkthrough", url: "/guides/nextjs/walkthrough" }],
+		submenu: [
+			// { title: "Walkthrough", url: "/guides/nextjs/walkthrough" }
+		],
 	},
 ];

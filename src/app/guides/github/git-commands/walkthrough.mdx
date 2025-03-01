@@ -1,0 +1,101 @@
+# 🚀 Git Commands
+
+---
+
+This document provides essential Git commands for creating, managing, and collaborating on repositories using the command line. Whether you're initializing a new project, pushing changes, or sending pull requests, these commands will help streamline your workflow.
+
+## 📌 Creating a New Repository on the Command Line
+
+```bash
+echo "# Project_React" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JxTorres003/Project_React.git
+git push -u origin main
+```
+
+---
+
+## 📤 Pushing an Existing Repository to GitHub
+
+```bash
+git remote add origin https://github.com/JxTorres003/Project_React.git
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## 🔄 Sending a Pull Request (Updating with the Latest Changes)
+
+### ✅ Steps to Update Your Feature Branch
+
+#### 1️⃣ Navigate to Your Repository Folder
+
+```bash
+cd /c/SF.Code/CohortFolder/RepoName
+```
+
+#### 2️⃣ Check for Pending Changes
+
+```bash
+git status
+```
+
+#### 3️⃣ Stage All Changes
+
+```bash
+git add -A
+```
+
+#### 4️⃣ Commit Changes with a Descriptive Message
+
+```bash
+git commit -m "Implemented cool feature"
+```
+
+#### 5️⃣ Switch to the `main` Branch
+
+```bash
+git checkout main
+```
+
+#### 6️⃣ Pull the Latest Changes from Remote `main`
+
+```bash
+git pull origin main
+```
+
+#### 7️⃣ Switch Back to Your Feature Branch
+
+```bash
+git checkout YOUR-BRANCH-NAME
+```
+
+#### 8️⃣ Merge the Latest `main` Branch into Your Feature Branch
+
+```bash
+git merge main
+```
+
+---
+
+## 🔃 Pulling & Pushing Changes
+
+#### 1️⃣ Verify Changes Before Pushing
+
+```bash
+git status
+```
+
+#### 2️⃣ Push Changes to Remote Repository
+
+```bash
+git push origin HEAD
+```
+
+---
+
+### 🎯 Next Steps: Check Your GitHub Repository for Updates! ✅

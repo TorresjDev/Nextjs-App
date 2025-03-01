@@ -64,18 +64,18 @@ body {
 .gradient-background {
 	background: linear-gradient(312deg, #820000, #000000, #000000, #820000);
 	background-size: 240% 240%;
-	animation: gradient-animation 10s ease infinite;
+	animation: gradient-animation 30s ease infinite;
 }
 
 @keyframes gradient-animation {
 	0% {
-		background-position: 0% 75%;
+		background-position: 0% 50%;
 	}
 	50% {
 		background-position: 100% 50%;
 	}
 	100% {
-		background-position: 0% 75%;
+		background-position: 0% 50%;
 	}
 }
 
