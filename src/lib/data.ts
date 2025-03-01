@@ -16,6 +16,8 @@ export const items = [
 	{
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [{ title: "Walkthrough", url: "/guides/nextjs/walkthrough" }],
+		submenu: [
+			// { title: "Walkthrough", url: "/guides/nextjs/walkthrough" }
+		],
 	},
 ];

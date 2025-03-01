@@ -36,10 +36,14 @@ export default function RootLayout({
 				>
 					<SidebarProvider>
 						<div className="flex">
-							<AppSidebar />
+							<aside>
+								<AppSidebar />
+							</aside>
 							<main className="max-h-full ml-[10px] mt-16 flex flex-1">
 								<SidebarTrigger />
-								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+								<Suspense fallback={<div>Loading...</div>}>
+									<section className="max-w-full ">{children}</section>
+								</Suspense>
 							</main>
 						</div>
 					</SidebarProvider>
