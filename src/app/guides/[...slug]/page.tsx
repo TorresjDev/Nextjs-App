@@ -1,43 +1,37 @@
 "use client";
-
 import { notFound } from "next/navigation";
-import { useMemo, Suspense, lazy } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation"; // Import useParams
 
-const mdxFiles: {
-	[key: string]: () => Promise<{ default: React.ComponentType }>;
-} = {
-	"database/ERD": () => import("../database/ERD/walkthrough.mdx"),
-	"github/create-repo": () => import("../github/create-repo/walkthrough.mdx"),
-	"github/git-commands": () => import("../github/git-commands/walkthrough.mdx"),
-	"github/rules-setup": () => import("../github/rules-setup/walkthrough.mdx"),
-	nextjs: () => import("../nextjs/walkthrough.mdx"),
-};
+export default function WalkthroughPage() {
+	const params = useParams(); // Use useParams() instead of receiving params as a prop
+	const slug = params?.slug as string[]; // Ensure slug is an array
+	const [Component, setComponent] = useState<React.ElementType | null>(null);
 
-export default function WalkthroughPage({
-	params,
-}: {
-	params: { slug: string[] };
-}) {
-	const path = params?.slug.join("/");
+	console.log("Params:", params);
 
-	const WalkthroughComponent = useMemo(() => {
-		if (mdxFiles.hasOwnProperty(path)) {
-			return lazy(mdxFiles[path]);
-		}
-		return null;
-	}, [path]);
+	useEffect(() => {
+		if (!slug || slug.length === 0) return;
 
-	if (!WalkthroughComponent) {
+		// Dynamically import the MDX component
+		import(`../${slug.join("/")}/walkthrough.mdx`)
+			.then((mod) => setComponent(() => mod.default))
+			.catch(() => setComponent(() => <div>Sorry, Page not found</div>));
+	}, [slug]);
+
+	if (!slug || slug.length === 0) {
 		return notFound();
 	}
 
 	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<section className="max-w-full overflow-y-scroll ">
-				<article className="prose bg-slate-300 mx-auto p-8 flex flex-col max-w-[90%]">
-					<WalkthroughComponent />
-				</article>
-			</section>
-		</Suspense>
+		<section className="max-w-full overflow-y-scroll m-2 ">
+			<article className="prose bg-slate-200 mx-auto p-6 mt-3 flex flex-col max-w-[90%] border-x-4 border-y-2 rounded-md border-[#650000]">
+				{Component ? (
+					<Component />
+				) : (
+					<div className="m-4 text-2xl font-bold">Loading...</div>
+				)}
+			</article>
+		</section>
 	);
 }

@@ -6,6 +6,7 @@ import Navigation from "./components/Navigation";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 import { AppSidebar } from "@/app/components/app-sidebar";
 import Footer from "./components/Footer";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,7 +41,7 @@ export default function RootLayout({
 							</aside>
 							<main className=" ml-[10px] mt-16 flex flex-1 max-h-[50rem]">
 								<SidebarTrigger />
-								{children}
+								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
 							</main>
 						</div>
 					</SidebarProvider>
