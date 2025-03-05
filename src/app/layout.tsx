@@ -35,15 +35,13 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<SidebarProvider>
-						<div className="flex">
+						<div className="flex max-h-full">
 							<aside>
 								<AppSidebar />
 							</aside>
-							<main className="max-h-full ml-[10px] mt-16 flex flex-1">
+							<main className=" ml-[10px] mt-16 flex flex-1 max-h-[50rem]">
 								<SidebarTrigger />
-								<Suspense fallback={<div>Loading...</div>}>
-									<section className="max-w-full ">{children}</section>
-								</Suspense>
+								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
 							</main>
 						</div>
 					</SidebarProvider>
