@@ -10,6 +10,27 @@ export async function POST(request: Request) {
 		const body = await request.json();
 
 		// Create a checkout session
+		// const session = await stripe.checkout.sessions.create({
+		// 	line_items: [
+		// 		{
+		// 			price_data: {
+		// 				currency: "usd",
+		// 				product_data: {
+		// 					name: "Support My Journey - Donation",
+		// 					description: "A contribution to support my development projects.",
+		// 				},
+		// 				unit_amount: body.amount * 100, // Convert dollars to cents
+		// 			},
+		// 			quantity: 1,
+		// 		},
+		// 	],
+		// 	mode: "payment",
+		// 	success_url: `${request.headers.get(
+		// 		"origin"
+		// 	)}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+		// 	cancel_url: `${request.headers.get("origin")}/cancel`,
+		// });
+
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
 				{
@@ -17,7 +38,8 @@ export async function POST(request: Request) {
 						currency: "usd",
 						product_data: {
 							name: "Support My Journey - Donation",
-							description: "A contribution to support my development projects.",
+							description:
+								"A donation contribution to support my development projects.",
 						},
 						unit_amount: body.amount * 100, // Convert dollars to cents
 					},
@@ -32,7 +54,11 @@ export async function POST(request: Request) {
 		});
 
 		// Return session ID & redirect URL
-		return NextResponse.json({ id: session.id });
+		if (!session?.success_url) {
+			throw new Error("Session success URL is null");
+		}
+
+		return NextResponse.redirect(session.success_url, { status: 303 });
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(

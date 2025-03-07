@@ -9,18 +9,21 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
 export async function GET(request: Request) {
 	try {
 		// Extract session ID from query parameters
-		const { searchParams } = new URL(request.url);
-		const session_id = searchParams.get("session_id");
+		// const { searchParams } = new URL(request.url);
+		console.log(request);
 
-		if (!session_id) {
-			return NextResponse.json(
-				{ error: "Session ID is required" },
-				{ status: 400 }
-			);
-		}
+		const session_id = request.url;
+
+		// if (!session_id) {
+		// 	return NextResponse.json(
+		// 		{ error: "Session ID is required" },
+		// 		{ status: 400 }
+		// 	);
+		// }
 
 		// Retrieve session and customer details
 		const session = await stripe.checkout.sessions.retrieve(session_id);
+
 		if (!session.customer || typeof session.customer !== "string") {
 			return NextResponse.json(
 				{ error: "Invalid customer data" },
