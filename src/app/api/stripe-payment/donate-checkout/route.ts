@@ -1,36 +1,18 @@
 import { NextResponse } from "next/server";
-import Stripe from "stripe";
+import { stripe } from "../../../../lib/stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-	apiVersion: "2024-12-18.acacia", // Adjust if needed
-});
+export async function POST(req: Request) {
+	console.log({ req });
 
-export async function POST(request: Request) {
 	try {
-		const body = await request.json();
+		// Parse JSON body
+		const { amount } = await req.json();
 
-		// Create a checkout session
-		// const session = await stripe.checkout.sessions.create({
-		// 	line_items: [
-		// 		{
-		// 			price_data: {
-		// 				currency: "usd",
-		// 				product_data: {
-		// 					name: "Support My Journey - Donation",
-		// 					description: "A contribution to support my development projects.",
-		// 				},
-		// 				unit_amount: body.amount * 100, // Convert dollars to cents
-		// 			},
-		// 			quantity: 1,
-		// 		},
-		// 	],
-		// 	mode: "payment",
-		// 	success_url: `${request.headers.get(
-		// 		"origin"
-		// 	)}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-		// 	cancel_url: `${request.headers.get("origin")}/cancel`,
-		// });
+		if (!amount || amount < 100) {
+			return NextResponse.json({ error: "Invalid amount" }, { status: 400 });
+		}
 
+		// Create Stripe checkout session
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
 				{
@@ -38,27 +20,20 @@ export async function POST(request: Request) {
 						currency: "usd",
 						product_data: {
 							name: "Support My Journey - Donation",
-							description:
-								"A donation contribution to support my development projects.",
+							description: "A contribution to support my development projects.",
 						},
-						unit_amount: body.amount * 100, // Convert dollars to cents
+						unit_amount: amount, // amount in cents
 					},
 					quantity: 1,
 				},
 			],
 			mode: "payment",
-			success_url: `${request.headers.get(
-				"origin"
-			)}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
-			cancel_url: `${request.headers.get("origin")}/cancel`,
+			success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/thank-you?session_id={CHECKOUT_SESSION_ID}`,
+			cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/cancel`,
 		});
 
-		// Return session ID & redirect URL
-		if (!session?.success_url) {
-			throw new Error("Session success URL is null");
-		}
-
-		return NextResponse.redirect(session.success_url, { status: 303 });
+		// Return session ID for redirect
+		return NextResponse.json({ id: session.id }, { status: 200 });
 	} catch (error) {
 		console.error(error);
 		return NextResponse.json(
