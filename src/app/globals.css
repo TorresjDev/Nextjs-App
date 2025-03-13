@@ -12,6 +12,11 @@
 	animation: gradient-animation 15s ease infinite;
 }
 
+.fade-in {
+	opacity: 0;
+	animation: fade-in 1.5s ease-out forwards;
+}
+
 @keyframes gradient-animation {
 	0% {
 		background-position: 0% 75%;
@@ -33,11 +38,6 @@
 		opacity: 1;
 		transform: translateX(0);
 	}
-}
-
-.fade-in {
-	opacity: 0;
-	animation: fade-in 1.5s ease-out forwards;
 }
 
 @media print {

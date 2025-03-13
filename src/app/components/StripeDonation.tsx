@@ -50,7 +50,7 @@ const StripeDonation = ({ amount }: { amount: number }) => {
 		<button
 			onClick={handleStripePayment}
 			disabled={loading}
-			className="bg-[#DAA520] text-black p-3 rounded-md font-medium hover:font-bold hover:bg-[#C0C0C0] transition-all"
+			className="bg-[#DAA520] text-black p-3 rounded-md font-medium hover:font-bold hover:text-[#820000] transition-all"
 		>
 			{loading ? "Loading..." : "Click here to donate"}
 		</button>
