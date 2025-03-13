@@ -7,15 +7,13 @@ const DonationJar = () => {
 	const [amount] = useState<number | null>(null);
 
 	return (
-		<section className="bg-[#820000]/20 backdrop-blur-lg rounded-lg shadow-md p-6 border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all mt-3">
-			<h2 className="text-3xl font-bold text-[#DAA520] text-center mb-4">
-				Support My Journey 🚀
-			</h2>
+		<section className="bg-[#820000]/20 backdrop-blur-lg rounded-lg shadow-md p-6 border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all mt-3 text-center">
+			<h2 className=" font-bold text-[#DAA520] mb-3">Support My Journey 🚀</h2>{" "}
+			<h3 className="mb-2 animate-pulse text-[#DAA520] mx-auto">
+				Make a donation today
+			</h3>
 			<div className="mx-auto max-w-[65vw]">
-				<div className=" p-6 text-center">
-					<h3 className="text-2xl font-semibold text-[#DAA520] mb-2">
-						Make a donation
-					</h3>
+				<div className=" p-4 text-center">
 					<p className="text-[#C0C0C0]/80 mb-3">
 						Accepting donations via Debit/Credit 💳 or Crypto through Coinbase
 						₿🪙
