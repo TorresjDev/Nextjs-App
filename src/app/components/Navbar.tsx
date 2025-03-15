@@ -15,6 +15,7 @@ const Navbar = () => {
 								width={45}
 								alt="fire giphy"
 								className="pb-2"
+								unoptimized={true}
 							/>{" "}
 							&nbsp;&nbsp;
 							<span className="font-semibold text-inherit pt-2 text-3xl">
@@ -32,6 +33,7 @@ const Navbar = () => {
 							width={21}
 							alt="fire giphy"
 							className="pb-2"
+							unoptimized={true}
 						/>
 					</p>
 				</div>

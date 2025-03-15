@@ -31,7 +31,7 @@ const CryptoDonation = ({ amount }: { amount: number }) => {
 		<button
 			onClick={handleCryptoDonation}
 			disabled={loading}
-			className="bg-[#DAA520]/70 text-black p-3 rounded-md font-bold transition-all  border-2 border-black hover:border-[#820000]/90 hover:bg-[#DAA520]/90"
+			className="bg-[#DAA520]/70 text-black p-3 rounded-md font-bold transition-all border-2 border-black hover:border-[#820000]/70 hover:bg-[#DAA520]"
 		>
 			Crypto ₿ 🪙
 		</button>

@@ -15,7 +15,7 @@ const DonationJar = () => {
 					Select a payment option you would like to donate in 💸
 				</h3>
 				<div className="flex items-center justify-center space-x-4">
-					<StripeDonation amount={amount ?? 1} />
+					<StripeDonation />
 					<CryptoDonation amount={amount ?? 1} />
 				</div>
 				<div className=" p-3 mt-3">

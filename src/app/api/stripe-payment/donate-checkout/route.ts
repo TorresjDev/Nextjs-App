@@ -5,25 +5,10 @@ export async function POST(req: Request) {
 	console.log({ req });
 
 	try {
-		// Parse JSON body
-		const { amount } = await req.json();
-
-		if (!amount || amount < 100) {
-			return NextResponse.json({ error: "Invalid amount" }, { status: 400 });
-		}
-
-		// Create Stripe checkout session
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
 				{
-					price_data: {
-						currency: "usd",
-						product_data: {
-							name: "Support My Journey - Donation",
-							description: "A contribution to support my development projects.",
-						},
-						unit_amount: amount, // amount in cents
-					},
+					price: process.env.STRIPE_PRICE_ID!, // <-- reference your created Stripe price
 					quantity: 1,
 				},
 			],
@@ -32,7 +17,6 @@ export async function POST(req: Request) {
 			cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/cancel`,
 		});
 
-		// Return session ID for redirect
 		return NextResponse.json({ id: session.id }, { status: 200 });
 	} catch (error) {
 		console.error(error);

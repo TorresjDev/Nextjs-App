@@ -3,7 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
 	/* config options here */
 	images: {
-		domains: ["torresjdev.github.io"],
+		remotePatterns: [
+			{
+				hostname: "torresjdev.github.io",
+			},
+		],
 	},
 };
 

@@ -3,57 +3,56 @@ import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe(
-	process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string
+	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
 );
 
-const StripeDonation = ({ amount }: { amount: number }) => {
+const StripeDonation = () => {
 	const [loading, setLoading] = useState<boolean>(false);
-	// console.log(donation);
+	const [error, setError] = useState<string | null>(null);
+
 	const handleStripePayment = async () => {
 		setLoading(true);
-
-		if (amount < 1) {
-			alert("Please enter a valid donation amount.");
-			setLoading(false);
-			return;
-		}
+		setError(null);
 
 		try {
 			const response = await fetch("/api/stripe-payment/donate-checkout", {
 				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ amount: Math.round(amount * 100) }), // Convert to cents
+				headers: { "Content-Type": "application/json" },
 			});
 
 			const data = await response.json();
 
-			if (!response.ok) {
-				throw new Error(data.error || "Something went wrong.");
-			}
+			if (!response.ok)
+				throw new Error(data.error || "Failed to create session.");
 
 			const stripe = await stripePromise;
-			if (stripe) {
-				await stripe.redirectToCheckout({ sessionId: data.id });
-			} else {
-				throw new Error("Stripe initialization failed.");
-			}
-		} catch (error) {
-			console.error("Stripe Payment Error:", error);
+
+			if (!stripe) throw new Error("Stripe failed to load.");
+
+			const { error } = await stripe.redirectToCheckout({ sessionId: data.id });
+
+			if (error) throw new Error(error.message);
+		} catch (err) {
+			const errorMessage =
+				err instanceof Error ? err.message : "An unknown error occurred";
+			console.error(errorMessage);
+			setError(errorMessage);
 		} finally {
 			setLoading(false);
 		}
 	};
 
 	return (
-		<button
-			onClick={handleStripePayment}
-			disabled={loading}
-			className="bg-[#DAA520]/70 text-black p-3 rounded-md transition-all font-bold border-2 border-black hover:border-[#820000]/90 hover:bg-[#DAA520]/90"
-		>
-			{loading ? "Loading..." : "Credit/Debit 💳"}
-		</button>
+		<div>
+			<button
+				onClick={handleStripePayment}
+				disabled={loading}
+				className="bg-[#DAA520]/70 text-black p-3 rounded-md font-bold transition-all border-2 border-black hover:border-[#820000]/70 hover:bg-[#DAA520] disabled:opacity-50 disabled:cursor-not-allowed"
+			>
+				{loading ? "Loading..." : "Donate with Credit/Debit 💳"}
+			</button>
+			{error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+		</div>
 	);
 };
 
