@@ -1,80 +1,48 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-
-// Initialize Stripe
-const stripePromise = loadStripe(
-	process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
-);
+import StripeDonation from "./StripeDonation";
+import CryptoDonation from "./CryptoDonation";
 
 const DonationJar = () => {
-	const [amount, setAmount] = useState<number>(10); // Default amount is $50
-
-	const handleStripePayment = async () => {
-		if (amount < 1) {
-			alert("Please enter a valid donation amount.");
-			return;
-		}
-
-		const stripe = await stripePromise;
-
-		const response = await fetch("/api/checkout-session", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ amount }), // Send dynamic amount to API
-		});
-
-		const session = await response.json();
-		if (stripe) {
-			await stripe.redirectToCheckout({ sessionId: session.id });
-		}
-	};
+	const [amount] = useState<number | null>(null);
 
 	return (
-		<section className="bg-black/50 backdrop-blur-lg rounded-lg shadow-md p-8 border border-[#C0C0C0]/10 mt-10">
-			<h2 className="text-3xl font-bold text-[#DAA520] text-center mb-6">
-				Support My Journey 🚀
-			</h2>
-			<div className="grid md:grid-cols-2 gap-8">
-				{/* Stripe Donation Section */}
-				<div className="bg-[#820000]/30 p-6 rounded-lg border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all text-center">
-					<h3 className="text-2xl font-semibold text-[#DAA520] mb-2">
-						Donate with Card 💳
-					</h3>
-					<p className="text-[#C0C0C0]/80 mb-4">
-						Credit, debit, or any form Stripe allows.
-					</p>
-					<h5 className="text-2xl font-semibold text-[#DAA520] mb-2">
-						Enter Your Donation Amount 💸
-					</h5>
-					<input
-						type="number"
-						min="1"
-						value={amount}
-						onChange={(e) => setAmount(Number(e.target.value))}
-						className="bg-black/70 text-white rounded-md p-2 w-1/3 mb-4 mx-3"
-					/>
-					<button
-						onClick={handleStripePayment}
-						className="bg-[#DAA520] text-black p-3 rounded-md font-medium hover:font-bold hover:bg-[#C0C0C0] transition-all"
-					>
-						Support Now
-					</button>
+		<section className="bg-[#820000]/20 backdrop-blur-lg rounded-lg shadow-md border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all m-3 p-3 text-center">
+			<h2 className="text-[#DAA520] mx-auto">Make a donation today</h2>
+			<div className="mx-auto">
+				<h3 className="text-2xl font-semibold text-[#DAA520] mt-3 mb-5">
+					Select a payment option you would like to donate in 💸
+				</h3>
+				<div className="flex items-center justify-center space-x-4">
+					<StripeDonation />
+					<CryptoDonation amount={amount ?? 1} />
 				</div>
-
-				{/* Crypto Section Placeholder */}
-				<div className="bg-[#820000]/30 p-6 rounded-lg border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all text-center">
-					<h3 className="text-2xl font-semibold text-[#DAA520] mb-2">
-						Donate with Crypto ₿
-					</h3>
-					<p className="text-[#C0C0C0]/80 mb-4">
-						Bitcoin, Ethereum, or any crypto you choose.
+				<div className=" p-3 mt-3">
+					<p className="text-[#C0C0C0]/80">
+						Currently accepting donations in these payment options:
 					</p>
-					<button className="bg-[#DAA520] text-black p-3 rounded-md font-medium hover:font-bold hover:bg-[#C0C0C0] transition-all">
-						Donate Crypto
-					</button>
+				</div>
+				<div className="flex items-center justify-center space-x-4">
+					<Image
+						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/visa.svg"
+						height={40}
+						width={40}
+						alt="visa icon"
+					/>
+					<Image
+						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/master-card.svg"
+						height={40}
+						width={40}
+						alt="visa icon"
+					/>
+					<span className="mx-5"></span>
+					<Image
+						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/coinbase.svg"
+						height={70}
+						width={70}
+						alt="visa icon"
+					/>
 				</div>
 			</div>
 		</section>

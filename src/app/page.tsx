@@ -1,20 +1,44 @@
+"use client";
 import DonationJar from "./components/DonationJar";
+import Image from "next/image";
+import { TextGenerateEffect } from "./components/ui/text-generate-effect";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-	return (
-		<div>
-			{/* Existing Intro Section */}
-			<div className="bg-black/50 backdrop-blur-lg rounded-lg shadow-sm p-6 mb-8 border border-[#C0C0C0]/10">
-				<h2 className="text-3xl font-bold text-[#DAA520] mb-2">
-					Empower My Code Journey
-				</h2>
-				<p className="text-[#C0C0C0]/80 mb-6">
-					Your support directly fuels my development adventures and tech
-					explorations.
-				</p>
-			</div>
+	const words = `Empower My Coding Journey `;
+	const [showImage, setShowImage] = useState(false);
 
-			{/* Donation Section */}
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setShowImage(true);
+		}, 3100);
+
+		return () => clearTimeout(timer);
+	}, []);
+
+	return (
+		<div className="p-3 items-center justify-center text-center">
+			<div className="flex p-3 mb-2 mx-auto justify-center">
+				<TextGenerateEffect filter={true} duration={3} words={words} />
+				<div
+					className={`transition-opacity duration-500 ease-in-out ${
+						showImage ? "opacity-100" : "opacity-0"
+					}`}
+				>
+					<Image
+						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/gif/anime/fire-burn-fabio-nikolaus.gif"
+						height={50}
+						width={50}
+						alt="fire giphy"
+						className="relative bottom-0"
+						unoptimized={true}
+					/>
+				</div>
+			</div>
+			<p className="text-[#C0C0C0]/80 mb-3">
+				Your support directly fuels my open source projects and allows me to
+				continue innovating new software. 💻
+			</p>
 			<DonationJar />
 		</div>
 	);

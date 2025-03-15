@@ -19,9 +19,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="gradient-background min-h-screen relative overflow-hidden">
+			<body className="gradient-background">
 				<Navbar />
-				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative min-h-screen">
+				<main className="max-w-7xl md:!min-h-[36rem] mx-auto py-6 px-3">
 					{children}
 				</main>
 				<Footer />
