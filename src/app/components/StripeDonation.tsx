@@ -49,7 +49,7 @@ const StripeDonation = () => {
 				disabled={loading}
 				className="bg-[#DAA520]/70 text-black p-3 rounded-md font-bold transition-all border-2 border-black hover:border-[#820000]/70 hover:bg-[#DAA520] disabled:opacity-50 disabled:cursor-not-allowed"
 			>
-				{loading ? "Loading..." : "Donate with Credit/Debit 💳"}
+				{loading ? "Loading..." : "Credit/Debit 💳"}
 			</button>
 			{error && <p className="text-red-500 text-sm mt-2">{error}</p>}
 		</div>

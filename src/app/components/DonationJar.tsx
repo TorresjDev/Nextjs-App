@@ -8,7 +8,7 @@ const DonationJar = () => {
 	const [amount] = useState<number | null>(null);
 
 	return (
-		<section className="bg-[#820000]/20 backdrop-blur-lg rounded-lg shadow-md border border-[#DAA520]/10 hover:border-[#DAA520]/30 transition-all m-3 p-3 text-center">
+		<section className="bg-[#565656] text-center rounded-xl">
 			<h2 className="text-[#DAA520] mx-auto">Make a donation today</h2>
 			<div className="mx-auto">
 				<h3 className="text-2xl font-semibold text-[#DAA520] mt-3 mb-5">
