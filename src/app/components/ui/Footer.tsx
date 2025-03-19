@@ -24,7 +24,7 @@ const Footer = () => {
 					<h3 className="font-bold text-[#DAA520]/90 mb-4">Navigate</h3>
 					<ul className="space-y-2">
 						<li>
-							<Link href="/" className="hover:text-[#DAA520]/90">
+							<Link href="/" className="hover:text-[#DAA520]/90 hover:ms-1">
 								Home
 							</Link>
 						</li>
@@ -32,18 +32,18 @@ const Footer = () => {
 							<a
 								href="https://tiny.cc/Jtorres_dev"
 								target="_blank"
-								className="hover:text-[#DAA520]/90"
+								className="hover:text-[#DAA520]/90 hover:ms-1"
 							>
 								Portfolio
 							</a>
 						</li>
 						{/* <li>
-							<a href="/blog" className="hover:text-[#DAA520]/90">
+							<a href="/blog" className="hover:text-[#DAA520]/90 hover:ms-1">
 								Blog
 							</a>
 						</li>
 						<li>
-							<a href="/contact" className="hover:text-[#DAA520]/90">
+							<a href="/contact" className="hover:text-[#DAA520]/90 hover:ms-1">
 								Contact
 							</a>
 						</li> */}
@@ -58,7 +58,7 @@ const Footer = () => {
 							<a
 								href="https://nextjs.org"
 								target="_blank"
-								className="hover:text-[#DAA520]/90"
+								className="hover:text-[#DAA520]/90 hover:ms-1"
 							>
 								Next.js
 							</a>
@@ -67,7 +67,7 @@ const Footer = () => {
 							<a
 								href="https://tailwindcss.com"
 								target="_blank"
-								className="hover:text-[#DAA520]/90"
+								className="hover:text-[#DAA520]/90 hover:ms-1"
 							>
 								Tailwind CSS
 							</a>
@@ -76,7 +76,7 @@ const Footer = () => {
 							<a
 								href="https://reactjs.org"
 								target="_blank"
-								className="hover:text-[#DAA520]/90"
+								className="hover:text-[#DAA520]/90 hover:ms-1"
 							>
 								React
 							</a>
@@ -85,7 +85,7 @@ const Footer = () => {
 							<a
 								href="https://developer.mozilla.org"
 								target="_blank"
-								className="hover:text-[#DAA520]/90"
+								className="hover:text-[#DAA520]/90 hover:ms-1"
 							>
 								MDN Web Docs
 							</a>
@@ -96,45 +96,45 @@ const Footer = () => {
 				{/* Contact Section */}
 				<div>
 					<h3 className="font-bold text-[#DAA520]/90 mb-4">Contact</h3>
-					<p className="text-gray-400">
+					<p className=" text-[#C0C0C0]/90">
 						Have a question or want to work together?
 					</p>
 					<p className="mt-2">
 						<a
 							href="mailto:j.torres3.dev@gmail.com"
-							className="hover:text-[#DAA520]/90"
+							className="hover:text-[#DAA520]/90 hover:ms-1"
 						>
 							j.torres3.dev@gmail.com
 						</a>
 					</p>
-					<h3 className="font-bold text-[#DAA520]/90 mb-4 my-4">Connect</h3>
-					<div className="flex space-x-4 ">
-						{/* Social Media Icons */}
+					<h3 className="font-bold text-[#DAA520]/90 my-4">Connect</h3>
+					<div className="flex items-center justify-evenly space-x-2">
 						<a
-							href="https://github.com/TorresjDev"
+							href="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg"
 							target="_blank"
 							aria-label="GitHub"
+							className="transform transition-transform duration-200 hover:translate-y-[-4px]"
 						>
 							<Image
 								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg"
-								alt="github-image"
-								className="hover:w-[26px]"
-								width={24}
-								height={24}
-							></Image>
+								alt="GitHub"
+								width={40}
+								height={40}
+							/>
 						</a>
+
 						<a
-							href="https://linkedin.com/in/torresjdev"
+							href="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/linkedIn.svg"
 							target="_blank"
 							aria-label="LinkedIn"
+							className="transform transition-transform duration-200 hover:translate-y-[-2px]"
 						>
 							<Image
 								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/linkedIn.svg"
-								alt="github-image"
-								className="hover:w-[26px]"
-								width={24}
-								height={24}
-							></Image>
+								alt="LinkedIn"
+								width={40}
+								height={40}
+							/>
 						</a>
 					</div>
 				</div>

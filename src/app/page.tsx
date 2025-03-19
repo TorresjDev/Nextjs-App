@@ -30,7 +30,7 @@ export default function Home() {
 						height={50}
 						width={50}
 						alt="fire giphy"
-						className="relative bottom-0"
+						className="relative bottom-1"
 						unoptimized={true}
 					/>
 				</div>
