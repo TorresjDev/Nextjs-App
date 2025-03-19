@@ -2,7 +2,13 @@
 module.exports = {
 	content: ["./src/**/*.{ts,tsx}"],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				abn: "#820000",
+				gold: "#DAA520",
+				silver: "#C0C0C0",
+			},
+		},
 	},
 	plugins: [],
 };

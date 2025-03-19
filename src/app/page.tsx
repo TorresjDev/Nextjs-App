@@ -35,7 +35,7 @@ export default function Home() {
 					/>
 				</div>
 			</div>
-			<p className="text-[#C0C0C0]/80 mb-3">
+			<p className="text-silver/80 mb-3">
 				Your support directly fuels my open source projects and allows me to
 				continue innovating new software. 💻
 			</p>

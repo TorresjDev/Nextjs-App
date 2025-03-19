@@ -8,10 +8,12 @@ const DonationJar = () => {
 	const [amount] = useState<number | null>(null);
 
 	return (
-		<section className="bg-[#484848] text-center rounded-xl py-5 max-w-[60%] mx-auto mt-5 border-2 border-white">
-			<h1 className="font-bold mx-auto text-white">Make a donation today</h1>
+		<section className="bg-[#484848] text-center rounded-xl py-5 max-w-[60%] mx-auto mt-5 border-4 border-abn shadow-abn">
+			<h1 className="font-bold mx-auto text-white drop-shadow-lg">
+				Make a donation today
+			</h1>
 			<div className="mx-auto">
-				<h3 className="text-2xl font-semibold text-[#DAA520] mt-3 mb-5">
+				<h3 className="text-2xl font-semibold text-gold mt-3 mb-5">
 					Select a payment option you would like to donate in 💸
 				</h3>
 				<div className="flex items-center justify-center space-x-4">
@@ -19,7 +21,7 @@ const DonationJar = () => {
 					<CryptoDonation amount={amount ?? 1} />
 				</div>
 				<div className=" p-3 mt-3">
-					<p className="text-[#C0C0C0]/90">
+					<p className="text-silver/90">
 						Currently accepting donations in these payment options:
 					</p>
 				</div>
