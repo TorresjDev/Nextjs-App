@@ -30,12 +30,12 @@ export default function Home() {
 						height={50}
 						width={50}
 						alt="fire giphy"
-						className="relative bottom-0"
+						className="relative bottom-1"
 						unoptimized={true}
 					/>
 				</div>
 			</div>
-			<p className="text-[#C0C0C0]/80 mb-3">
+			<p className="text-silver/80 mb-3">
 				Your support directly fuels my open source projects and allows me to
 				continue innovating new software. 💻
 			</p>
