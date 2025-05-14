@@ -14,6 +14,7 @@ import {
 	SidebarMenuItem,
 	SidebarMenuSub,
 	SidebarMenuSubItem,
+	useSidebar,
 } from "../components/ui/sidebar";
 import {
 	Collapsible,
@@ -24,6 +25,7 @@ import { items } from "@/lib/data";
 
 export function AppSidebar() {
 	const pathname = usePathname();
+	const { isMobile, setOpenMobile } = useSidebar();
 
 	return (
 		<Sidebar>
@@ -86,6 +88,11 @@ export function AppSidebar() {
 																				? "text-white font-bold"
 																				: "text-[#C0C0C0]/80"
 																		}`}
+																		onClick={() => {
+																			if (isMobile) {
+																				setOpenMobile(false); // <== Close sidebar on mobile
+																			}
+																		}}
 																	>
 																		{subItem.title}
 																	</Link>

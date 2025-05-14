@@ -25,7 +25,7 @@ export default function WalkthroughPage() {
 
 	return (
 		<section className="max-w-full overflow-y-scroll m-2 ">
-			<article className="prose bg-slate-200 mx-auto p-6 mt-3 flex flex-col max-w-[90%] border-x-4 border-y-2 rounded-md border-[#650000]">
+			<article className="prose bg-slate-200 mx-auto p-6 mt-3 flex flex-col w-[90vw] md:w-[90%] border-x-4 border-y-2 rounded-md border-[#650000]">
 				{Component ? (
 					<Component />
 				) : (
