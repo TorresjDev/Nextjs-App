@@ -14,10 +14,21 @@ export default function Navigation() {
 							width="45"
 							height="45"
 						/>
-						<p className="font-bold text-inherit p-1 mx-1 md:mx-3 text-3xl">
-							TorresjDev
+						<p className="font-bold text-inherit ps-1 ms-1 md:ms-3 text-3xl">
+							Jesus Torres
 						</p>
-					</NavbarBrand>{" "}
+
+						<div className="animate-flareSpark">
+							<Image
+								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/gif/anime/fire-burn-fabio-nikolaus.gif"
+								height={33}
+								width={33}
+								alt="fire giphy"
+								className="pb-2"
+								unoptimized={true}
+							/>
+						</div>
+					</NavbarBrand>
 				</Link>{" "}
 			</NavbarContent>
 		</Navbar>
