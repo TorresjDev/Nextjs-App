@@ -269,7 +269,14 @@ const SidebarTrigger = React.forwardRef<
 			data-sidebar="trigger"
 			variant="ghost"
 			size="icon"
-			className={cn("h-10 w-9 m-3 hover:text-[#DAA520]/90", className)}
+			// className={cn(
+			// 	"h-10 w-9 m-3 hover:text-[#DAA520]/90 hidden sm:absolute sm:left-2 sm:top-2 sm:z-[61] sm:block md:relative md:m-3",
+			// 	className
+			// )}
+			className={cn(
+				"h-12 w-12 md:h-10 md:w-9 absolute right-2 top-2 z-[61] hover:text-[#DAA520]/90 md:relative md:m-3",
+				className
+			)}
 			onClick={(event) => {
 				onClick?.(event);
 				toggleSidebar();
@@ -402,7 +409,7 @@ const SidebarContent = React.forwardRef<
 			ref={ref}
 			data-sidebar="content"
 			className={cn(
-				"flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden ",
+				"flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mt-12 md:mt-0",
 				className
 			)}
 			{...props}

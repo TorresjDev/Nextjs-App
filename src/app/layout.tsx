@@ -29,10 +29,10 @@ export default function RootLayout({
 				<div className="gradient-background"></div>
 				<Navigation />
 				<ThemeProvider
+					enableSystem={false}
+					disableTransitionOnChange
 					attribute="class"
 					defaultTheme="dark"
-					enableSystem
-					disableTransitionOnChange
 				>
 					<SidebarProvider>
 						<div className="flex max-h-full">

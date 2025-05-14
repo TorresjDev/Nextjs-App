@@ -9,12 +9,12 @@ export default function Navigation() {
 				<Link href="/">
 					<NavbarBrand>
 						<Image
-							src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/dev/dev-1.svg"
+							src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/dev/dev-xl.svg"
 							alt="jt dev logo"
-							width="50"
-							height="50"
+							width="45"
+							height="45"
 						/>
-						<p className="font-bold text-inherit p-1 mx-3 text-3xl">
+						<p className="font-bold text-inherit p-1 mx-1 md:mx-3 text-3xl">
 							TorresjDev
 						</p>
 					</NavbarBrand>{" "}
