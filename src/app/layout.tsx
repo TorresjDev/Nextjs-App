@@ -39,7 +39,7 @@ export default function RootLayout({
 							<aside>
 								<AppSidebar />
 							</aside>
-							<main className=" ml-[10px] mt-16 flex flex-1 max-h-[50rem]">
+							<main className="max-w-full ml-[10px] md:px-2 mt-16 flex flex-1 max-h-[50rem]">
 								<SidebarTrigger />
 								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
 							</main>
