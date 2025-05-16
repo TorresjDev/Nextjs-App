@@ -109,6 +109,55 @@ export function AppSidebar() {
 						</SidebarMenu>
 					</SidebarGroupContent>
 				</SidebarGroup>
+				{/* <SidebarGroup className="mt-4 bottom-0 mx-auto text-center">
+					<SidebarGroupLabel>Themes</SidebarGroupLabel>
+					<SidebarGroupContent>
+						<SidebarMenu className="">
+							<SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("light");
+									}}
+								>
+									Light
+								</button>
+							</SidebarMenuItem>
+							<SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("dark");
+									}}
+								>
+									Dark
+								</button>
+							</SidebarMenuItem>
+							<SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("custom-theme");
+									}}
+								>
+									Custom Theme
+								</button>
+							</SidebarMenuItem>
+						</SidebarMenu>
+					</SidebarGroupContent>
+				</SidebarGroup> */}
 			</SidebarContent>
 		</Sidebar>
 	);

@@ -32,7 +32,7 @@ export default function RootLayout({
 					enableSystem={false}
 					disableTransitionOnChange
 					attribute="class"
-					defaultTheme="dark"
+					// defaultTheme="dark"
 				>
 					<SidebarProvider>
 						<div className="flex max-h-full">

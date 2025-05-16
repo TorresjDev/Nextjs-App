@@ -20,6 +20,12 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
+	/* transition: background 0.5s ease, color 0.5s ease; */
+}
+
+* {
+	transition: background-color 9s ease-out, color 6s ease-in,
+		border-color 2s ease-in;
 }
 
 @layer base {
@@ -34,7 +40,35 @@ body {
 		--sidebar-ring: 217.2 91.2% 59.8%;
 	}
 
+	* {
+		@apply border-border;
+	}
+
+	body {
+		@apply bg-background text-foreground;
+	}
+
+	.light {
+		--background: #ffffff;
+		--foreground: #171717;
+		--gradient-theme: #ffffff;
+		color: #000000;
+
+		--sidebar-background: 0 0% 98%;
+		--sidebar-foreground: 240 5.3% 26.1%;
+		--sidebar-primary: 240 5.9% 10%;
+		--sidebar-primary-foreground: 0 0% 98%;
+		--sidebar-accent: 240 4.8% 95.9%;
+		--sidebar-accent-foreground: 240 5.9% 10%;
+		--sidebar-border: 220 13% 91%;
+		--sidebar-ring: 217.2 91.2% 59.8%;
+	}
+
 	.dark {
+		--background: #0a0a0a;
+		--foreground: #ededed;
+		--gradient-theme: #000000;
+
 		--sidebar-background: 240 5.9% 10%;
 		--sidebar-foreground: 240 4.8% 95.9%;
 		--sidebar-primary: 224.3 76.3% 48%;
@@ -45,12 +79,19 @@ body {
 		--sidebar-ring: 217.2 91.2% 59.8%;
 	}
 
-	* {
-		@apply border-border;
-	}
+	.custom-theme {
+		--background: #f0f4ff;
+		--foreground: #1a2e5c;
+		--gradient-theme: #1a2e5c;
 
-	body {
-		@apply bg-background text-foreground;
+		--sidebar-background: 220 20% 95%;
+		--sidebar-foreground: 220 15% 25%;
+		--sidebar-primary: 220 80% 50%;
+		--sidebar-primary-foreground: 0 0% 100%;
+		--sidebar-accent: 220 40% 85%;
+		--sidebar-accent-foreground: 220 20% 25%;
+		--sidebar-border: 220 30% 80%;
+		--sidebar-ring: 220 70% 60%;
 	}
 }
 
@@ -61,14 +102,22 @@ body {
 }
 
 .gradient-background {
-	background: linear-gradient(312deg, #820000, #000000, #000000, #820000);
+	/* --gradient-theme: #000000; */
+
+	background: linear-gradient(
+		312deg,
+		#820000,
+		var(--gradient-theme),
+		var(--gradient-theme),
+		#820000
+	);
 	background-size: 240% 240%;
 	animation: gradient-animation 30s ease infinite;
 }
 
 @keyframes gradient-animation {
 	0% {
-		background-position: 0% 50%;
+		background-position: 0% 25%;
 	}
 	50% {
 		background-position: 100% 50%;
@@ -87,14 +136,5 @@ nav > header {
 @media (max-width: 640px) {
 	nav > header {
 		margin-left: 1rem;
-	}
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
 	}
 }
