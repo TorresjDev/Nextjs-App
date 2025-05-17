@@ -1,4 +1,3 @@
-````markdown
 # 🌐 Nextjs-App
 
 A modern full-stack developer hub built with Next.js.  
@@ -47,7 +46,6 @@ next.config.ts        # Next.js config
 tailwind.config.ts    # Tailwind config
 README.md             # You're here
 ```
-````
 
 Each project or tool lives in its own subfolder and will have a dedicated `README.md`.
 
@@ -95,7 +93,3 @@ Stay tuned for open source tasks and improvements once the app scales.
 ## 🔖 Tags
 
 `#nextjs` `#typescript` `#tailwindcss` `#vercel` `#fullstack` `#portfolio` `#developer-hub`
-
-```
-
-```
