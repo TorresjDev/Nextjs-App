@@ -1,9 +1,9 @@
 export const items = [
-	{
-		title: "Database",
-		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/db.svg",
-		submenu: [{ title: "ERD", url: "/walkthrough-guides/database/ERD" }],
-	},
+	// {
+	// 	title: "Database",
+	// 	icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/db.svg",
+	// 	submenu: [{ title: "ERD", url: "/walkthrough-guides/database/ERD" }],
+	// },
 	{
 		title: "GitHub",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg",

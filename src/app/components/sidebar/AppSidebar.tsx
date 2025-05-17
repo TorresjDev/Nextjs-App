@@ -15,12 +15,12 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubItem,
 	useSidebar,
-} from "../components/ui/sidebar";
+} from "../ui/sidebar";
 import {
 	Collapsible,
 	CollapsibleTrigger,
 	CollapsibleContent,
-} from "../components/ui/collapsible";
+} from "../ui/collapsible";
 import { items } from "@/lib/data";
 
 export function AppSidebar() {
@@ -30,6 +30,7 @@ export function AppSidebar() {
 	return (
 		<Sidebar>
 			<SidebarContent>
+				{/* group for about me section */}
 				<SidebarGroup>
 					<SidebarGroupLabel>Walkthrough Guides</SidebarGroupLabel>
 					<SidebarGroupContent>
@@ -106,6 +107,56 @@ export function AppSidebar() {
 									</Collapsible>
 								);
 							})}
+						</SidebarMenu>
+					</SidebarGroupContent>
+				</SidebarGroup>
+				{/* themes group  */}
+				<SidebarGroup className="mt-4 bottom-2 absolute ">
+					<SidebarGroupLabel>Themes</SidebarGroupLabel>
+					<SidebarGroupContent>
+						<SidebarMenu className="">
+							<SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("light");
+									}}
+								>
+									Light
+								</button>
+							</SidebarMenuItem>
+							<SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("dark");
+									}}
+								>
+									Dark
+								</button>
+							</SidebarMenuItem>
+							{/* <SidebarMenuItem>
+								<button
+									onClick={() => {
+										document.documentElement.classList.remove(
+											"light",
+											"dark",
+											"custom-theme"
+										);
+										document.documentElement.classList.add("custom-theme");
+									}}
+								>
+									Custom Theme
+								</button>
+							</SidebarMenuItem> */}
 						</SidebarMenu>
 					</SidebarGroupContent>
 				</SidebarGroup>

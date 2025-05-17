@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import Navigation from "./components/Navigation";
-import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
-import { AppSidebar } from "@/app/components/app-sidebar";
+import { AppSidebar } from "@/app/components/sidebar/AppSidebar";
 import Footer from "./components/Footer";
 import { Suspense } from "react";
+import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 
