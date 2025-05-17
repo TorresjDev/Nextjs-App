@@ -13,10 +13,10 @@ export default function WalkthroughPage() {
 	useEffect(() => {
 		if (!slug || slug.length === 0) return;
 
-		// Dynamically import the MDX component
+		// Dynamically import the MDX component on catch render not-found.tsx compoent
 		import(`../${slug.join("/")}/walkthrough.mdx`)
 			.then((mod) => setComponent(() => mod.default))
-			.catch(() => setComponent(() => <div>Sorry, Page not found</div>));
+			.catch(() => () => setComponent(() => notFound()));
 	}, [slug]);
 
 	if (!slug || slug.length === 0) {

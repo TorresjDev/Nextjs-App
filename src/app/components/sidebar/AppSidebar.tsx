@@ -15,12 +15,12 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubItem,
 	useSidebar,
-} from "../components/ui/sidebar";
+} from "../ui/sidebar";
 import {
 	Collapsible,
 	CollapsibleTrigger,
 	CollapsibleContent,
-} from "../components/ui/collapsible";
+} from "../ui/collapsible";
 import { items } from "@/lib/data";
 
 export function AppSidebar() {
@@ -30,6 +30,7 @@ export function AppSidebar() {
 	return (
 		<Sidebar>
 			<SidebarContent>
+				{/* group for about me section */}
 				<SidebarGroup>
 					<SidebarGroupLabel>Walkthrough Guides</SidebarGroupLabel>
 					<SidebarGroupContent>
@@ -109,7 +110,8 @@ export function AppSidebar() {
 						</SidebarMenu>
 					</SidebarGroupContent>
 				</SidebarGroup>
-				{/* <SidebarGroup className="mt-4 bottom-0 mx-auto text-center">
+				{/* themes group  */}
+				<SidebarGroup className="mt-4 bottom-2 absolute ">
 					<SidebarGroupLabel>Themes</SidebarGroupLabel>
 					<SidebarGroupContent>
 						<SidebarMenu className="">
@@ -141,7 +143,7 @@ export function AppSidebar() {
 									Dark
 								</button>
 							</SidebarMenuItem>
-							<SidebarMenuItem>
+							{/* <SidebarMenuItem>
 								<button
 									onClick={() => {
 										document.documentElement.classList.remove(
@@ -154,10 +156,10 @@ export function AppSidebar() {
 								>
 									Custom Theme
 								</button>
-							</SidebarMenuItem>
+							</SidebarMenuItem> */}
 						</SidebarMenu>
 					</SidebarGroupContent>
-				</SidebarGroup> */}
+				</SidebarGroup>
 			</SidebarContent>
 		</Sidebar>
 	);

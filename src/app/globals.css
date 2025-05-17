@@ -4,7 +4,7 @@
 
 :root {
 	--background: #ffffff;
-	--foreground: #171717;
+	--foreground: #0a0a0a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,12 +20,12 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0;
-	/* transition: background 0.5s ease, color 0.5s ease; */
+	transition: background 6s ease-out;
 }
 
 * {
-	transition: background-color 9s ease-out, color 6s ease-in,
-		border-color 2s ease-in;
+	color: var(--foreground);
+	transition: background 6s ease-out;
 }
 
 @layer base {
@@ -49,19 +49,19 @@ body {
 	}
 
 	.light {
-		--background: #ffffff;
-		--foreground: #171717;
+		--background: #e3e3e3;
+		--foreground: #000000;
 		--gradient-theme: #ffffff;
-		color: #000000;
 
 		--sidebar-background: 0 0% 98%;
-		--sidebar-foreground: 240 5.3% 26.1%;
+		--sidebar-foreground: 0 5.3% 26.1%;
 		--sidebar-primary: 240 5.9% 10%;
 		--sidebar-primary-foreground: 0 0% 98%;
 		--sidebar-accent: 240 4.8% 95.9%;
-		--sidebar-accent-foreground: 240 5.9% 10%;
+		--sidebar-accent-foreground: 0 5.9% 10%;
 		--sidebar-border: 220 13% 91%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
+		transition: background 6s ease-out, color 3s ease-in;
 	}
 
 	.dark {
@@ -77,6 +77,7 @@ body {
 		--sidebar-accent-foreground: 240 4.8% 95.9%;
 		--sidebar-border: 240 3.7% 15.9%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
+		transition: background 6s ease-out, color 3s ease-in;
 	}
 
 	.custom-theme {
@@ -103,7 +104,6 @@ body {
 
 .gradient-background {
 	/* --gradient-theme: #000000; */
-
 	background: linear-gradient(
 		312deg,
 		#820000,
@@ -112,7 +112,8 @@ body {
 		#820000
 	);
 	background-size: 240% 240%;
-	animation: gradient-animation 30s ease infinite;
+	transition: background 6s ease-out;
+	animation: gradient-animation 18s ease infinite;
 }
 
 @keyframes gradient-animation {
