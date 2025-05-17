@@ -2,7 +2,7 @@ export const items = [
 	// {
 	// 	title: "Database",
 	// 	icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/db.svg",
-	// 	submenu: [{ title: "ERD", url: "/walkthrough-guides/database/ERD" }],
+	// 	submenu: [{ title: "ERD", url: "/guides/database/ERD" }],
 	// },
 	{
 		title: "GitHub",
@@ -10,12 +10,12 @@ export const items = [
 		submenu: [
 			{
 				title: "Create Repository",
-				url: "/walkthrough-guides/github/create-repo",
+				url: "/guides/github/create-repo",
 			},
-			{ title: "Rules Setup", url: "/walkthrough-guides/github/rules-setup" },
+			{ title: "Rules Setup", url: "/guides/github/rules-setup" },
 			{
 				title: "Git  Commands",
-				url: "/walkthrough-guides/github/git-commands",
+				url: "/guides/github/git-commands",
 			},
 		],
 	},
@@ -23,7 +23,7 @@ export const items = [
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
 		submenu: [
-			// { title: "Walkthrough", url: "/walkthrough-guides/nextjs/walkthrough" }
+			// { title: "Walkthrough", url: "/guides/nextjs/walkthrough" }
 		],
 	},
 ];
