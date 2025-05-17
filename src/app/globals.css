@@ -24,7 +24,6 @@ body {
 }
 
 * {
-	color: var(--foreground);
 	transition: background 6s ease-out;
 }
 
@@ -48,7 +47,7 @@ body {
 		@apply bg-background text-foreground;
 	}
 
-	.light {
+	/* .light {
 		--background: #e3e3e3;
 		--foreground: #000000;
 		--gradient-theme: #ffffff;
@@ -62,7 +61,7 @@ body {
 		--sidebar-border: 220 13% 91%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
 		transition: background 6s ease-out, color 3s ease-in;
-	}
+	} */
 
 	.dark {
 		--background: #0a0a0a;
@@ -80,7 +79,7 @@ body {
 		transition: background 6s ease-out, color 3s ease-in;
 	}
 
-	.custom-theme {
+	/* .custom-theme {
 		--background: #f0f4ff;
 		--foreground: #1a2e5c;
 		--gradient-theme: #1a2e5c;
@@ -93,7 +92,7 @@ body {
 		--sidebar-accent-foreground: 220 20% 25%;
 		--sidebar-border: 220 30% 80%;
 		--sidebar-ring: 220 70% 60%;
-	}
+	} */
 }
 
 @layer utilities {
