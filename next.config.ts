@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
 	images: {
-		domains: ["torresjdev.github.io"],
+		domains: ["torresjdev.github.io", "fonts.googleapis.com"],
 	},
 };
 

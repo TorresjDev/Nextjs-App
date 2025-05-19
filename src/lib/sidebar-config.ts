@@ -1,4 +1,4 @@
-export const items = [
+export const guideSidebarItems = [
 	// {
 	// 	title: "Database",
 	// 	icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/db.svg",
@@ -9,8 +9,8 @@ export const items = [
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg",
 		submenu: [
 			{
-				title: "Create Repository",
-				url: "/guides/github/create-repository",
+				title: "Repository",
+				url: "/guides/github/repository",
 			},
 			{ title: "Rules Setup", url: "/guides/github/rules-setup" },
 
@@ -18,14 +18,12 @@ export const items = [
 				title: "Git  Commands",
 				url: "/guides/github/git-commands",
 			},
-			{ title: "Migrate Repository", url: "/guides/github/migrate-repository" },
+			// { title: "Migrate Repository", url: "/guides/github/migrate-repository" },
 		],
 	},
 	{
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [
-			// { title: "Walkthrough", url: "/guides/nextjs/walkthrough" }
-		],
+		submenu: [{ title: "Nextjs Components", url: "/guides/nextjs/component" }],
 	},
 ];

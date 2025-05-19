@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./provider";
 import { Suspense } from "react";
-import Navigation from "./components/Navigation";
-import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
-import { AppSidebar } from "./components/AppSidebar";
-import Footer from "./components/Footer";
+import Navigation from "../components/Navigation";
+import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar";
+import { SidebarNav } from "../components/sidebar/SidebarNav";
+import Footer from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,7 +37,7 @@ export default function RootLayout({
 					<SidebarProvider>
 						<div className="flex max-h-full">
 							<aside>
-								<AppSidebar />
+								<SidebarNav />
 							</aside>
 							<main className="max-w-full ml-[10px] md:px-2 mt-16 flex flex-1 max-h-[50rem]">
 								<SidebarTrigger />
