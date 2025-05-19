@@ -1,13 +1,13 @@
 import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
-import Typography from "@tailwindcss/typography";
+import typography from "@tailwindcss/typography";
 
 export default {
 	darkMode: ["class"],
 	content: [
-		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-		"./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+		"./src/pages/**/*.{js,ts,jsx,tsx,md,mdx}",
+		"./src/components/**/*.{js,ts,jsx,tsx,md,mdx}",
+		"./src/app/**/*.{js,ts,jsx,tsx,md,mdx}",
 		"./node_modules/@nextui-org/theme/dist/components/(button|navbar|ripple|spinner).js",
 	],
 	theme: {
@@ -39,7 +39,30 @@ export default {
 					"100%": { opacity: "1", transform: "scale(1)" },
 				},
 			},
+			typography: () => ({
+				DEFAULT: {
+					css: {
+						"--tw-prose-body": "var(--black)",
+						"--tw-prose-headings": "var(--black)",
+						"--tw-prose-code": "var(--black)",
+						"--tw-prose-pre-code": "var(--white)",
+						"--tw-prose-pre-bg": "var(--shadow)",
+						"--tw-prose-quotes": "var(--black)",
+						"--tw-prose-bold": "var(--black)",
+						"--tw-prose-invert-body": "var(--black)",
+						"--tw-prose-invert-headings": "var(--black)",
+						"--tw-prose-invert-code": "var(--black)",
+						"--tw-prose-invert-quotes": "var(--black)",
+						"--tw-prose-invert-bold": "var(--black)",
+						"--tw-prose-invert-pre-code": "var(--white)",
+						"--tw-prose-invert-pre-bg": "var(--shadow)",
+					},
+				},
+			}),
 		},
 	},
-	plugins: [Typography, nextui()],
+	plugins: [
+		typography(), // ✅ call as function
+		nextui(),
+	],
 } satisfies Config;
