@@ -2,8 +2,7 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";
-import { PanelLeft } from "lucide-react";
-import { cn } from "../../../lib/utils";
+import { cn } from "../../lib/utils";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Separator } from "./separator";
@@ -15,7 +14,8 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "./tooltip";
-import { useIsMobile } from "../../../hooks/use-mobile";
+import { useIsMobile } from "../../hooks/use-mobile";
+import Icon from "./icon";
 
 const SIDEBAR_COOKIE_NAME = "sidebar:state";
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7;
@@ -238,7 +238,7 @@ const Sidebar = React.forwardRef<
 							: "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
 						// Adjust the padding for floating and inset variants.
 						variant === "floating" || variant === "inset"
-							? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]"
+							? "px-2 py-1 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)_+_theme(spacing.4)_+2px)]"
 							: "group-data-[collapsible=icon]:w-[--sidebar-width-icon] group-data-[side=left]:border-r group-data-[side=right]:border-l",
 						className
 					)}
@@ -261,7 +261,7 @@ const SidebarTrigger = React.forwardRef<
 	React.ElementRef<typeof Button>,
 	React.ComponentProps<typeof Button>
 >(({ className, onClick, ...props }, ref) => {
-	const { toggleSidebar } = useSidebar();
+	const { toggleSidebar, state } = useSidebar();
 
 	return (
 		<Button
@@ -269,10 +269,6 @@ const SidebarTrigger = React.forwardRef<
 			data-sidebar="trigger"
 			variant="ghost"
 			size="icon"
-			// className={cn(
-			// 	"h-10 w-9 m-3 hover:text-[#DAA520]/90 hidden sm:absolute sm:left-2 sm:top-2 sm:z-[61] sm:block md:relative md:m-3",
-			// 	className
-			// )}
 			className={cn(
 				"h-12 w-12 md:h-10 md:w-9 absolute right-2 top-2 z-[61] hover:text-[#DAA520]/90 md:relative md:m-3",
 				className
@@ -283,7 +279,18 @@ const SidebarTrigger = React.forwardRef<
 			}}
 			{...props}
 		>
-			<PanelLeft />
+			{state === "expanded" ? (
+				<Icon
+					name="right_panel_open"
+					className="align-bottom !text-white !text-4xl"
+				/>
+			) : (
+				<Icon
+					name="left_panel_open"
+					className="align-bottom !text-white !text-4xl"
+				/>
+			)}
+
 			<span className="sr-only">Toggle Sidebar</span>
 		</Button>
 	);
@@ -409,7 +416,7 @@ const SidebarContent = React.forwardRef<
 			ref={ref}
 			data-sidebar="content"
 			className={cn(
-				"flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden mt-12 md:mt-0",
+				"flex min-h-0 flex-1 flex-col gap-1 overflow-auto group-data-[collapsible=icon]:overflow-hidden mt-9 md:mt-0",
 				className
 			)}
 			{...props}
@@ -426,7 +433,10 @@ const SidebarGroup = React.forwardRef<
 		<div
 			ref={ref}
 			data-sidebar="group"
-			className={cn("relative flex w-full min-w-0 flex-col p-2", className)}
+			className={cn(
+				"relative flex w-full min-w-0 flex-col px-2 py-1",
+				className
+			)}
 			{...props}
 		/>
 	);
@@ -695,7 +705,7 @@ const SidebarMenuSub = React.forwardRef<
 		ref={ref}
 		data-sidebar="menu-sub"
 		className={cn(
-			"mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5",
+			"mx-[1.1rem] flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5",
 			"group-data-[collapsible=icon]:hidden",
 			className
 		)}

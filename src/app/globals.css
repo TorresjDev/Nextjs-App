@@ -1,10 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@200");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* src/app/globals.css (or wherever your global styles live) */
+
+.material-symbols-outlined {
+	font-family: "Material Symbols Outlined" !important;
+	font-weight: bolder;
+	font-style: normal;
+	font-size: 20px;
+	color: #000000;
+	font-feature-settings: "liga";
+	-webkit-font-feature-settings: "liga";
+	-webkit-font-smoothing: antialiased;
+	/* font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; */
+}
+
 :root {
-	--background: #ffffff;
-	--foreground: #0a0a0a;
+	--background: #0a0a0a;
+	--foreground: #ededed;
 	--black: #000000;
 	--white: #ffffff;
 	--shadow: #333333;
@@ -81,21 +97,6 @@ body {
 		--sidebar-ring: 217.2 91.2% 59.8%;
 		transition: background 6s ease-out, color 3s ease-in;
 	}
-
-	/* .custom-theme {
-		--background: #f0f4ff;
-		--foreground: #1a2e5c;
-		--gradient-theme: #1a2e5c;
-
-		--sidebar-background: 220 20% 95%;
-		--sidebar-foreground: 220 15% 25%;
-		--sidebar-primary: 220 80% 50%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 220 40% 85%;
-		--sidebar-accent-foreground: 220 20% 25%;
-		--sidebar-border: 220 30% 80%;
-		--sidebar-ring: 220 70% 60%;
-	} */
 }
 
 @layer utilities {

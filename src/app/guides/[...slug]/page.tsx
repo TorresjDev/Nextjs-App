@@ -2,7 +2,7 @@
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { useMDXComponents } from "../../components/MDXComponents";
+import { useMDXComponents } from "../../../components/MDXComponents";
 
 export default function WalkthroughPage() {
 	const params = useParams();
