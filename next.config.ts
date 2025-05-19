@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
 	/* config options here */
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
-	eslint: {
-		dirs: ["app", "components", "layouts", "scripts"],
-	},
 	images: {
 		domains: ["torresjdev.github.io"],
 	},
