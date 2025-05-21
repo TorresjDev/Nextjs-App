@@ -12,25 +12,25 @@ import {
 } from "../ui/sidebar";
 import Icon from "../ui/icon";
 
-export default function AboutSidebarGroup() {
+export default function PostSidebarGroup() {
 	const pathname = usePathname();
 	const { isMobile, setOpenMobile } = useSidebar();
 
 	return (
 		<SidebarGroup>
-			<SidebarGroupLabel>About Me</SidebarGroupLabel>
+			<SidebarGroupLabel>Posts</SidebarGroupLabel>
 			<SidebarGroupContent>
 				<SidebarMenu>
 					<SidebarMenuItem>
 						<div className="flex items-center gap-2 cursor-pointer">
-							<SidebarMenuButton asChild isActive={pathname === "/about"}>
+							<SidebarMenuButton asChild isActive={pathname === "/posts"}>
 								<Link
-									href="/about"
+									href="/posts"
 									className="text-white"
 									onClick={() => isMobile && setOpenMobile(false)}
 								>
-									<Icon name="person" className="rounded-full p-1 bg-white" />
-									<span className="">Profile</span>
+									<Icon name="post" className="rounded-full p-1 bg-white" />
+									<span className="ps-2">Posts</span>
 								</Link>
 							</SidebarMenuButton>
 						</div>

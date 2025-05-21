@@ -3,7 +3,7 @@ type IconProps = {
 	className?: string;
 };
 
-export default function Icon({ name, className = "text-xl" }: IconProps) {
+export default function Icon({ name, className }: IconProps) {
 	return (
 		<span className={`material-symbols-outlined ${className}`}>{name}</span>
 	);
