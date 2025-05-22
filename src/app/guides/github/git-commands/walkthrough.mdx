@@ -1,31 +1,50 @@
-# <div align="center">🚀 Modern Git Workflow Commands</div>
+# <div align="center"> 🚀 Modern Git Workflow Commands</div>
 
 ---
 
-## This document outlines safe, modern, and professional Git commands for creating, syncing, and contributing to repositories. Ideal for solo or team-based projects.
+### This document outlines safe, modern, and professional Git commands for creating, syncing, and contributing to repositories. Ideal for solo or team-based projects.
 
 ## 📌 Create a New Repository (From Scratch)
 
+1.  **Create a README and initialize Git**
+
 ```bash
-# Create a README and initialize Git
 echo "# Project_React" >> README.md
+```
 
-# Initialize local repo
+2.  **Initialize local repo**
+
+```bash
 git init
+```
 
-# Stage README for commit
+3.  **Stage README for commit**
+
+```bash
 git add README.md
+```
 
-# First commit
+4.  **First commit**
+
+```bash
 git commit -m "Initial commit"
+```
 
-# Rename default branch to 'main'
+5.  **Rename default branch to 'main'**
+
+```bash
 git branch -M main
+```
 
-# Add remote GitHub repo
+6.  **Add remote GitHub repo**
+
+```bash
 git remote add origin https://github.com/JxTorres003/Project_React.git
+```
 
-# Push to GitHub and track
+7.  **Push to GitHub and track**
+
+```bash
 git push -u origin main
 ```
 
@@ -33,14 +52,21 @@ git push -u origin main
 
 ## 📤 Push an Existing Project to GitHub
 
+1.  **Add the GitHub remote**
+
 ```bash
-# Add the GitHub remote
 git remote add origin https://github.com/JxTorres003/Project_React.git
+```
 
-# Ensure your branch is named 'main'
+2.  **Ensure your branch is named 'main'**
+
+```bash
 git branch -M main
+```
 
-# Push and track
+3.  **Push and track**
+
+```bash
 git push -u origin main
 ```
 
@@ -52,11 +78,15 @@ git push -u origin main
 
 ### ✅ Update your dev or feature branch safely:
 
-```bash
-# Make sure you're on your dev branch
-git checkout your-branch
+1.  **Make sure you're on your dev branch**
 
-# Pull latest from main with rebase (recommended)
+```bash
+git checkout your-branch
+```
+
+2.  **Pull latest from main with rebase (recommended)**
+
+```bash
 git pull origin main --rebase
 ```
 
@@ -66,91 +96,28 @@ git pull origin main --rebase
 
 ## 🧼 Daily Workflow: Add ➕ Commit 💬 Push 🚀
 
+1.  **See uncommitted changes**
+
 ```bash
-# See uncommitted changes
 git status
+```
 
-# Stage all changes
+2.  **Stage all changes**
+
+```bash
 git add -A
+```
 
-# Commit with message
+3.  **Commit with message**
+
+```bash
 git commit -m "💡 Added new feature section to layout"
+```
 
-# Push to current branch
+4.  **Push to current branch**
+
+```bash
 git push
 ```
 
 > ✅ If it's the first push of a new branch:
-
-```bash
-git push -u origin your-branch
-```
-
----
-
-## 🔁 Keeping Branches in Sync
-
-```bash
-# Always rebase before merging to main
-git checkout your-branch
-git pull origin main --rebase
-```
-
-```bash
-# Then push your rebased branch
-git push --force-with-lease
-```
-
-> ⚠️ Use `--force-with-lease` only when rebasing — safe push that respects teammate updates.
-
----
-
-## 📥 Merging Dev Branch Into Main
-
-```bash
-# Switch to main
-git checkout main
-
-# Pull latest to ensure synced
-git pull origin main
-
-# Merge your finished feature branch
-git merge your-branch
-
-# Push to GitHub
-git push
-```
-
-> 🔐 Tip: Protect your `main` branch on GitHub to require pull requests.
-
----
-
-## 🧹 Delete Local & Remote Branches (Clean-up)
-
-```bash
-# Delete local branch
-git branch -D old-branch
-
-# Delete from GitHub
-git push origin --delete old-branch
-```
-
----
-
-## 🎯 Summary: Go-To Commands Cheat Sheet
-
-```bash
-| Task                    | Command                                       |
-| ----------------------- | --------------------------------------------- |
-| Stage All Files         | `git add -A`                                  |
-| Commit                  | `git commit -m "message"`                     |
-| Push                    | `git push`                                    |
-| First Push (new branch) | `git push -u origin your-branch`              |
-| Pull Latest with Rebase | `git pull origin main --rebase`               |
-| Merge Dev → Main        | `git checkout main` → `git merge your-branch` |
-| Delete Branch (remote)  | `git push origin --delete branch-name`        |
-```
-
----
-
-✅ Keep your branches clean. Rebase often. Push responsibly. Work like a pro. 😎

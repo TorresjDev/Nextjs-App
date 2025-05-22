@@ -29,7 +29,7 @@ export default function PostSidebarGroup() {
 									className="text-white"
 									onClick={() => isMobile && setOpenMobile(false)}
 								>
-									<Icon name="post" className="rounded-full p-1 bg-white" />
+									<Icon name="post" className="rounded-full p-0.5 bg-white" />
 									<span className="ps-2">Posts</span>
 								</Link>
 							</SidebarMenuButton>

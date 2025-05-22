@@ -29,7 +29,10 @@ export default function AboutSidebarGroup() {
 									className="text-white"
 									onClick={() => isMobile && setOpenMobile(false)}
 								>
-									<Icon name="person" className="rounded-full p-1 bg-white" />
+									<Icon
+										name="person"
+										className="rounded-full p-0.5 bg-white font-medium"
+									/>
 									<span className="">Profile</span>
 								</Link>
 							</SidebarMenuButton>
