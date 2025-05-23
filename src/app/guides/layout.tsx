@@ -6,7 +6,7 @@ export default function WalkthroughLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<section className="max-w-full overflow-y-scroll m-1 md:m-2 !text-black">
+		<section className="max-w-full max-h-[93vh] overflow-y-scroll m-1 md:m-2 !text-black">
 			<article className="prose bg-slate-200 mx-auto p-6 mt-3 flex flex-col !w-[90%] lg:!w-full max-w-[95vw] border-x-4 border-y-2 rounded-md border-s-[#650000] !text-black">
 				{/* You can add a sidebar or top nav here later */}
 				{children}

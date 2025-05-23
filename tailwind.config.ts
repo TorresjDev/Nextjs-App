@@ -49,6 +49,8 @@ export default {
 						"--tw-prose-pre-bg": "var(--shadow)",
 						"--tw-prose-quotes": "var(--black)",
 						"--tw-prose-bold": "var(--black)",
+						"--tw-prose-links": "var(--black)",
+						"--tw-prose-invert-links": "var(--black)",
 						"--tw-prose-invert-body": "var(--black)",
 						"--tw-prose-invert-headings": "var(--black)",
 						"--tw-prose-invert-code": "var(--black)",
