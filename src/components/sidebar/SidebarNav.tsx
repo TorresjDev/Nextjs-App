@@ -2,6 +2,7 @@
 import { Sidebar, SidebarContent } from "../ui/sidebar";
 import AboutSidebarGroup from "./AboutSidebarGroup";
 import WalkthroughSidebarGroup from "./GuidesSidebarGroup";
+import PostSidebarGroup from "./PostSidebarGroup";
 
 export function SidebarNav() {
 	return (
@@ -9,6 +10,8 @@ export function SidebarNav() {
 			<SidebarContent>
 				<AboutSidebarGroup />
 				<WalkthroughSidebarGroup />
+				<PostSidebarGroup />
+
 				{/* need group for ai resume builder*/}
 				{/* need group for comments*/}
 				{/* need group for contributions (donations)*/}

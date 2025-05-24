@@ -14,8 +14,8 @@ export default function Navigation() {
 							width="45"
 							height="45"
 						/>
-						<p className="font-bold text-inherit ps-1 ms-1 md:ms-3 text-3xl">
-							Jesus Torres
+						<p className="font-extrabold ps-1 ms-1 md:ms-3 text-3xl text-[#DAA520]/90">
+							WECode
 						</p>
 
 						<div className="animate-flareSpark">

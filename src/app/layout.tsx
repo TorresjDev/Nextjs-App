@@ -35,13 +35,19 @@ export default function RootLayout({
 					defaultTheme="dark"
 				>
 					<SidebarProvider>
-						<div className="flex max-h-full">
+						<div className="flex max-h-full max-w-full w-full">
 							<aside>
 								<SidebarNav />
 							</aside>
-							<main className="max-w-full ml-[10px] md:px-2 mt-16 flex flex-1 max-h-[50rem]">
+							<main className="w-full mx-2 md:ml-[10px] md:px-2 mt-24 sm:mt-20 md:mt-16 flex flex-1 max-h-full p-3 md:p-1">
 								<SidebarTrigger />
-								<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+								<section className="min-h-[92vh] w-11/12 flex flex-col mx-auto align-middle">
+									<Suspense
+										fallback={<div className="animate-spin">Loading...</div>}
+									>
+										{children}
+									</Suspense>{" "}
+								</section>
 							</main>
 						</div>
 					</SidebarProvider>

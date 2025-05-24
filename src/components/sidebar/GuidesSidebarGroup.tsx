@@ -49,8 +49,8 @@ export default function WalkthroughSidebarGroup() {
 												<div>
 													<Image
 														src={item.icon}
-														width={20}
-														height={20}
+														width={25}
+														height={25}
 														alt={`${item.title} icon`}
 														className="rounded-full"
 													/>
