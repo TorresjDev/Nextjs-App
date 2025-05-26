@@ -24,6 +24,6 @@ export const guideSidebarItems = [
 	{
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [{ title: "Nextjs Components", url: "/guides/nextjs/component" }],
+		submenu: [{ title: "Components", url: "/guides/nextjs/component" }],
 	},
 ];

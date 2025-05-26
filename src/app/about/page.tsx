@@ -9,7 +9,7 @@ export default async function AboutPage() {
 	return (
 		<section
 			id="about"
-			className="w-full mx-auto max-h-[110vh] h-[full] overflow-hidden"
+			className="w-full mx-auto max-h-[110vh] h-[full] overflow-y-scroll scroll-m-0"
 		>
 			<div className="flex flex-col md:flex-row justify-self-start md:justify-self-center gap-6 my-3">
 				<Image
@@ -38,7 +38,7 @@ export default async function AboutPage() {
 							<Image
 								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg"
 								alt="github-image"
-								className="hover:w-[26px]"
+								className="hover:animate-bounce"
 								width={24}
 								height={24}
 							></Image>
@@ -51,7 +51,7 @@ export default async function AboutPage() {
 							<Image
 								src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/linkedIn.svg"
 								alt="github-image"
-								className="hover:w-[26px]"
+								className="hover:animate-bounce"
 								width={24}
 								height={24}
 							></Image>
@@ -66,16 +66,24 @@ export default async function AboutPage() {
 				technical and business side of software projects.
 			</p>
 			<section className="mx-auto max-w-[80vw]">
-				<div className="block lg:flex justify-items-center my-1 w-full mx-auto">
+				<div className="block justify-items-center my-1 w-full mx-auto gap-3">
+					{/* <a href="https://github.com/anuraghazra/github-readme-stats"> */}
+					<img
+						src="https://github-readme-stats.vercel.app/api/top-langs/?username=TorresjDev&theme=tokyonight&layout=compact&hide=jupyter+notebook"
+						alt="Top Languages"
+						className="m-1 h-[25vh] w-[60vw] lg:w-[40vw] rounded-lg shadow"
+					/>
+					{/* </a> */}
 					<img
 						src="https://github-readme-stats.vercel.app/api?username=TorresjDev&show_icons=true&theme=tokyonight&count_private=true&hide=contribs"
 						alt="GitHub Stats"
-						className="h-[17vh] lg:h-[25vh] w-[60vw] rounded-lg shadow"
+						className="m-1 h-[17vh] lg:h-[25vh] w-[60vw] rounded-lg shadow"
 					/>
+
 					<img
-						src="https://github-readme-stats.vercel.app/api/top-langs/?username=TorresjDev&theme=tokyonight&layout=compact"
 						alt="Top Languages"
-						className="h-[25vh] w-[60vw] lg:w-[40vw] rounded-lg shadow"
+						src="https://github-readme-stats.vercel.app/api/wakatime?username=@@Jtorres&layout=compact&theme=tokyonight&hide=text,other,binary,tsconfig,markdown,xml,scss,git,git+config,json,YAML,image+(svg),mdx,prisma,c"
+						className="m-1 h-[17vh] lg:h-[27vh] w-[63vw] rounded-lg shadow"
 					/>
 				</div>
 				<div

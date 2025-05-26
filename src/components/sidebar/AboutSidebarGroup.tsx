@@ -26,7 +26,6 @@ export default function AboutSidebarGroup() {
 							<SidebarMenuButton asChild isActive={pathname === "/about"}>
 								<Link
 									href="/about"
-									className="text-white"
 									onClick={() => isMobile && setOpenMobile(false)}
 								>
 									<Icon
