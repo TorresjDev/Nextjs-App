@@ -1,4 +1,4 @@
-const githubUsername = process.env.GITHUB_USERNAME;
+const githubUsername = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
 
 export async function getGitHubProfile() {
 	if (!githubUsername) {

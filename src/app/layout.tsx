@@ -39,9 +39,9 @@ export default function RootLayout({
 							<aside>
 								<SidebarNav />
 							</aside>
-							<main className="w-full mx-2 md:ml-[10px] md:px-2 mt-24 sm:mt-20 md:mt-16 flex flex-1 max-h-full p-3 md:p-1">
+							<main className="w-full flex flex-1 mx-2 mt-24 sm:mt-20 md:mt-16 p-3 md:p-1">
 								<SidebarTrigger />
-								<section className="min-h-[92vh] w-11/12 flex flex-col mx-auto align-middle">
+								<section className="w-full flex flex-col mx-auto min-h-[95vh] overflow-y-auto px-2">
 									<Suspense
 										fallback={<div className="animate-spin">Loading...</div>}
 									>

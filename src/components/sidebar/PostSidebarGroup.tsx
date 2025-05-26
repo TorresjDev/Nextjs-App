@@ -26,7 +26,6 @@ export default function PostSidebarGroup() {
 							<SidebarMenuButton asChild isActive={pathname === "/posts"}>
 								<Link
 									href="/posts"
-									className="text-white"
 									onClick={() => isMobile && setOpenMobile(false)}
 								>
 									<Icon name="post" className="rounded-full p-0.5 bg-white" />
