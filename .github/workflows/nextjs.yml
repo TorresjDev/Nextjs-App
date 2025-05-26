@@ -11,15 +11,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    env:
+      NEXT_PUBLIC_GITHUB_USERNAME: ${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v3
 
       - name: 🧪 Install Dependencies
         run: npm install
-        env:
-          NEXT_PUBLIC_GITHUB_USERNAME: ${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}
 
       - name: 🔨 Build Project
         run: npm run build
