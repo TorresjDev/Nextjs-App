@@ -19,7 +19,7 @@ jobs:
       - name: 🧪 Install Dependencies
         run: npm install
         env:
-          NEXT_PUBLIC_GH_USERNAME: ${{ secrets.NEXT_PUBLIC_GH_USERNAME }}
+          NEXT_PUBLIC_GITHUB_USERNAME: ${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}
 
       - name: 🔨 Build Project
         run: npm run build
