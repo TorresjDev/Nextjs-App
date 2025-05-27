@@ -26,7 +26,6 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`gradient-background ${inter.className}`}>
-				<div className="gradient-background"></div>
 				<Navigation />
 				<ThemeProvider
 					enableSystem={false}
