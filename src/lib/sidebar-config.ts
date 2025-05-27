@@ -1,3 +1,6 @@
+import folder_data from "../../public/folder_data.svg";
+import sdlc from "../../public/sdlc.svg";
+
 export const guideSidebarItems = [
 	// {
 	// 	title: "Database",
@@ -5,18 +8,17 @@ export const guideSidebarItems = [
 	// 	submenu: [{ title: "ERD", url: "/guides/database/ERD" }],
 	// },
 	{
-		title: "GitHub",
-		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/social/github.svg",
+		title: "Version Control",
+		url: "/guides/version-control",
+		icon: folder_data,
 		submenu: [
 			{
-				title: "Repository",
-				url: "/guides/github/repository",
+				title: "1: Commands",
+				url: "/guides/version-control/git-github/commands",
 			},
-			{ title: "Rules Setup", url: "/guides/github/rules-setup" },
-
 			{
-				title: "Git  Commands",
-				url: "/guides/github/git-commands",
+				title: "2: Rules Setup",
+				url: "/guides/version-control/github/rules-setup",
 			},
 			// { title: "Migrate Repository", url: "/guides/github/migrate-repository" },
 		],
@@ -24,6 +26,21 @@ export const guideSidebarItems = [
 	{
 		title: "Next.js",
 		icon: "https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/next.svg",
-		submenu: [{ title: "Components", url: "/guides/nextjs/component" }],
+		submenu: [{ title: "1: Components", url: "/guides/nextjs/component" }],
+	},
+	{
+		title: "SDLC",
+		url: "/guides/sdlc",
+		icon: sdlc,
+		submenu: [
+			{
+				title: "1: Overview",
+				url: "/guides/sdlc/overview",
+			},
+			{
+				title: "2: Phase i",
+				url: "/guides/sdlc/phase-one",
+			},
+		],
 	},
 ];
