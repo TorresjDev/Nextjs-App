@@ -1,36 +1,51 @@
-"use client";
 import { notFound } from "next/navigation";
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import { useMDXComponents } from "../../../components/MDXComponents";
+import { promises as fs } from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { remark } from "remark";
+import remarkHtml from "remark-html";
+import remarkGfm from "remark-gfm";
 
-export default function WalkthroughPage() {
-	const params = useParams();
-	const slug = params?.slug as string[];
-	type MDXContent = React.ComponentType<{
-		components: Record<string, unknown>;
+interface MarkdownContent {
+	content: string;
+	data: Record<string, unknown>;
+}
+
+interface PageProps {
+	params: Promise<{
+		slug: string[];
 	}>;
-	const [mdxModule, setMdxModule] = useState<MDXContent | null>(null);
+}
 
-	const components = useMDXComponents({});
-	useEffect(() => {
-		if (!slug || slug.length === 0) return;
+export default async function WalkthroughPage({ params }: PageProps) {
+	const { slug } = await params;
 
-		import(`../${slug.join("/")}/walkthrough.mdx`)
-			.then((mod) => setMdxModule(() => mod.default))
-			.catch(() => setMdxModule(() => notFound()));
-	}, [slug]);
+	if (!slug || slug.length === 0) {
+		notFound();
+	}
 
-	if (!slug || slug.length === 0) return notFound();
-	if (!mdxModule) return <div className="p-4">Loading...</div>;
+	try {
+		const filePath = path.join(process.cwd(), 'src', 'app', 'guides', ...slug, 'walkthrough.md');
+		const fileContents = await fs.readFile(filePath, 'utf8');
+		const { data, content } = matter(fileContents);
 
-	const Content = mdxModule;
+		const processedContent = await remark()
+			.use(remarkGfm)
+			.use(remarkHtml)
+			.process(content);
 
-	return Content ? (
-		<div className="prose dark:prose-invert prose-body:text-black max-w-full p-4 ">
-			<Content components={components} />
-		</div>
-	) : (
-		<div className="m-4 text-2xl font-bold">Loading...</div>
-	);
+		const markdownContent: MarkdownContent = {
+			content: processedContent.toString(),
+			data
+		};
+
+		return (
+			<div className="prose dark:prose-invert prose-body:text-black max-w-full p-4">
+				<div dangerouslySetInnerHTML={{ __html: markdownContent.content }} />
+			</div>
+		);
+	} catch (error) {
+		console.error('Error loading markdown:', error);
+		notFound();
+	}
 }
