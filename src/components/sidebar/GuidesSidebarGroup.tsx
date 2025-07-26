@@ -52,7 +52,12 @@ export default function WalkthroughSidebarGroup() {
 														width={25}
 														height={25}
 														alt={`${item.title} icon`}
-														className="rounded-full"
+														className={` rounded-full ${
+															item.title == "Version Control" ||
+															item.title == "SDLC"
+																? "bg-white p-0.5"
+																: ""
+														}`}
 													/>
 													<span>{item.title}</span>
 												</div>
