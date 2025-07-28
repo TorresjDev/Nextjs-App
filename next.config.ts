@@ -27,38 +27,24 @@ const nextConfig: NextConfig = {
 		],
 	},
 
-	// Bundle analyzer for production builds
-	webpack: (config, { dev, isServer }) => {
-		if (!dev && !isServer) {
-			config.resolve.alias = {
-				...config.resolve.alias,
-				"react/jsx-runtime.js": "preact/compat/jsx-runtime",
-				react: "preact/compat",
-				"react-dom/test-utils": "preact/test-utils",
-				"react-dom": "preact/compat",
-			};
-		}
-		return config;
-	},
-
 	// Security headers
 	async headers() {
 		return [
 			{
-				source: '/(.*)',
+				source: "/(.*)",
 				headers: [
 					{
-						key: 'X-Frame-Options',
-						value: 'DENY'
+						key: "X-Frame-Options",
+						value: "DENY",
 					},
 					{
-						key: 'X-Content-Type-Options',
-						value: 'nosniff'
+						key: "X-Content-Type-Options",
+						value: "nosniff",
 					},
 					{
-						key: 'Referrer-Policy',
-						value: 'origin-when-cross-origin'
-					}
+						key: "Referrer-Policy",
+						value: "origin-when-cross-origin",
+					},
 				],
 			},
 		];
