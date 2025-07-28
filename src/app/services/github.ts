@@ -1,12 +1,8 @@
-const githubUsername = process.env.NEXT_PUBLIC_GITHUB_USERNAME;
+import { env } from '@/lib/env';
 
 export async function getGitHubProfile() {
-	if (!githubUsername) {
-		throw new Error("GitHub username is not defined in env file.");
-	}
-
 	const response = await fetch(
-		`https://api.github.com/users/${githubUsername}`,
+		`https://api.github.com/users/${env.NEXT_PUBLIC_GITHUB_USERNAME}`,
 		{
 			headers: {
 				Accept: "application/vnd.github+json",

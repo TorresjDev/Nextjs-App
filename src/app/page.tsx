@@ -10,7 +10,7 @@ export default function LandingPage() {
 			{/* Hero Section */}
 			<section className="text-center">
 				<h1 className="text-5xl font-extrabold">
-					Welcome to WECode
+					Welcome to JT Dev Studio
 					<div className="animate-flareSpark contents">
 						<Image
 							src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/gif/anime/fire-burn-fabio-nikolaus.gif"
