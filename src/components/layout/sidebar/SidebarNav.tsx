@@ -1,5 +1,5 @@
 "use client";
-import { Sidebar, SidebarContent } from "../ui/sidebar";
+import { Sidebar, SidebarContent } from "../../ui/sidebar";
 import AboutSidebarGroup from "./AboutSidebarGroup";
 import WalkthroughSidebarGroup from "./GuidesSidebarGroup";
 import PostSidebarGroup from "./PostSidebarGroup";

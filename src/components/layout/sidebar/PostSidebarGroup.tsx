@@ -9,8 +9,8 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 	useSidebar,
-} from "../ui/sidebar";
-import Icon from "../ui/icon";
+} from "../../ui/sidebar";
+import Icon from "../../ui/icon";
 
 export default function PostSidebarGroup() {
 	const pathname = usePathname();

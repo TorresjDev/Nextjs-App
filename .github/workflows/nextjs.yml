@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_GITHUB_USERNAME: ${{ secrets.NEXT_PUBLIC_GITHUB_USERNAME }}
+      NEXT_PUBLIC_WAKATIME_USERNAME: ${{ secrets.NEXT_PUBLIC_WAKATIME_USERNAME }}
     steps:
       - name: ⬇️ Checkout Repository
         uses: actions/checkout@v3

@@ -4,6 +4,8 @@ const nextConfig: NextConfig = {
 	/* config options here */
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md"],
+
+	// Enhanced image configuration
 	images: {
 		domains: [
 			"torresjdev.github.io",
@@ -13,6 +15,39 @@ const nextConfig: NextConfig = {
 			"github-readme-stats.vercel.app",
 			"ghchart.rshah.org",
 		],
+	},
+
+	// Performance optimizations
+	experimental: {
+		optimizePackageImports: [
+			"@nextui-org/button",
+			"@nextui-org/navbar",
+			"@radix-ui/react-tooltip",
+			"framer-motion",
+		],
+	},
+
+	// Security headers
+	async headers() {
+		return [
+			{
+				source: "/(.*)",
+				headers: [
+					{
+						key: "X-Frame-Options",
+						value: "DENY",
+					},
+					{
+						key: "X-Content-Type-Options",
+						value: "nosniff",
+					},
+					{
+						key: "Referrer-Policy",
+						value: "origin-when-cross-origin",
+					},
+				],
+			},
+		];
 	},
 };
 

@@ -6,8 +6,8 @@ import {
 	Collapsible,
 	CollapsibleContent,
 	CollapsibleTrigger,
-} from "../ui/collapsible";
-import Icon from "../ui/icon";
+} from "../../ui/collapsible";
+import Icon from "../../ui/icon";
 import {
 	SidebarGroup,
 	SidebarGroupContent,
@@ -18,8 +18,8 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubItem,
 	useSidebar,
-} from "../ui/sidebar";
-import { guideSidebarItems } from "../../lib/sidebar-config";
+} from "../../ui/sidebar";
+import { guideSidebarItems } from "../../../lib/sidebar-config";
 
 export default function WalkthroughSidebarGroup() {
 	const pathname = usePathname();
