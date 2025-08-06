@@ -45,9 +45,3 @@ next-env.d.ts
 
 # mynotes folder
 /mynotes
-
-# all shell scripts
-*.sh
-
-# mynotes folder
-/mynotes
