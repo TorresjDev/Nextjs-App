@@ -40,6 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# all shell scripts
+*.sh
 
-# Notes
-*mynotes
+# mynotes folder
+/mynotes
+
+# all shell scripts
+*.sh
+
+# mynotes folder
+/mynotes
