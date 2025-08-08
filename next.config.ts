@@ -5,6 +5,16 @@ const nextConfig: NextConfig = {
 	reactStrictMode: true,
 	pageExtensions: ["js", "jsx", "ts", "tsx", "md"],
 
+	// Skip API routes during static generation
+	experimental: {
+		optimizePackageImports: [
+			"@nextui-org/button",
+			"@nextui-org/navbar",
+			"@radix-ui/react-tooltip",
+			"framer-motion",
+		],
+	},
+
 	// Enhanced image configuration
 	images: {
 		domains: [
@@ -14,16 +24,6 @@ const nextConfig: NextConfig = {
 			"github-readme-streak-stats.herokuapp.com",
 			"github-readme-stats.vercel.app",
 			"ghchart.rshah.org",
-		],
-	},
-
-	// Performance optimizations
-	experimental: {
-		optimizePackageImports: [
-			"@nextui-org/button",
-			"@nextui-org/navbar",
-			"@radix-ui/react-tooltip",
-			"framer-motion",
 		],
 	},
 
