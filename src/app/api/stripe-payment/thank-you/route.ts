@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { stripe } from "../../../../lib/stripe";
+import { getStripe } from "../../../../lib/stripe";
 
 export async function GET(request: Request) {
 	try {
@@ -15,6 +15,9 @@ export async function GET(request: Request) {
 		// 		{ status: 400 }
 		// 	);
 		// }
+
+		// Get Stripe instance
+		const stripe = getStripe();
 
 		// Retrieve session and customer details
 		const session = await stripe.checkout.sessions.retrieve(session_id);

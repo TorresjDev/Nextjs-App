@@ -2,15 +2,26 @@ import "server-only";
 
 import Stripe from "stripe";
 
-// Validate environment variable exists
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+let stripe: Stripe;
 
-if (!stripeSecretKey) {
-	throw new Error(
-		"STRIPE_SECRET_KEY is not defined. Please check your environment variables."
-	);
-}
+// Lazy initialization - only create Stripe instance when needed
+export const getStripe = () => {
+	if (!stripe) {
+		const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 
-export const stripe = new Stripe(stripeSecretKey, {
-	apiVersion: "2025-07-30.basil",
-});
+		if (!stripeSecretKey) {
+			throw new Error(
+				"STRIPE_SECRET_KEY is not defined. Please check your environment variables."
+			);
+		}
+
+		stripe = new Stripe(stripeSecretKey, {
+			apiVersion: "2025-07-30.basil",
+		});
+	}
+
+	return stripe;
+};
+
+// Keep the old export for backward compatibility
+export { getStripe as stripe };

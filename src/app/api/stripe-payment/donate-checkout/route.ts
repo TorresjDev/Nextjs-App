@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
-import { stripe } from "../../../../lib/stripe";
+import { getStripe } from "../../../../lib/stripe";
 
 export async function POST(req: Request) {
 	console.log({ req });
 
 	try {
+		const stripe = getStripe();
+
 		const session = await stripe.checkout.sessions.create({
 			line_items: [
 				{
