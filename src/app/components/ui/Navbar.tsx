@@ -18,14 +18,14 @@ const Navbar = () => {
 								unoptimized={true}
 							/>{" "}
 							&nbsp;&nbsp;
-							<span className="font-semibold text-inherit pt-2 text-3xl">
+							<span className="font-bold text-inherit pt-2 text-3xl drop-shadow-2xl subpixel-antialiased">
 								Jesus Torres
 							</span>
 						</h1>
 					</Link>
 				</div>{" "}
 				<div className="hidden md:block">
-					<p className="flex items-center gap-x-2 text-silver font-semibold">
+					<p className="flex items-center gap-x-2 text-silver font-extrabold drop-shadow-2xl subpixel-antialiased">
 						Fuel the Passion
 						<Image
 							src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/gif/anime/fire-burn-fabio-nikolaus.gif"

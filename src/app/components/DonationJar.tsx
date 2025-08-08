@@ -9,11 +9,11 @@ const DonationJar = () => {
 
 	return (
 		<section className="bg-[#484848] text-center rounded-xl py-5 max-w-[60%] mx-auto mt-5 border-4 border-abn shadow-abn">
-			<h1 className="font-bold mx-auto text-white drop-shadow-lg">
+			<h1 className="font-semibold mx-auto text-white drop-shadow-2xl antialiased">
 				Make a donation today
 			</h1>
 			<div className="mx-auto">
-				<h3 className="text-2xl font-semibold text-gold mt-3 mb-5">
+				<h3 className="text-2xl font-bold text-gold mt-3 mb-5 drop-shadow-2xl subpixel-antialiased">
 					Select a payment option you would like to donate in 💸
 				</h3>
 				<div className="flex items-center justify-center space-x-4">
@@ -21,7 +21,7 @@ const DonationJar = () => {
 					<CryptoDonation amount={amount ?? 1} />
 				</div>
 				<div className=" p-3 mt-3">
-					<p className="text-silver/90">
+					<p className="text-silver drop-shadow-xl subpixel-antialiased font-medium">
 						Currently accepting donations in these payment options:
 					</p>
 				</div>
@@ -31,12 +31,14 @@ const DonationJar = () => {
 						height={40}
 						width={40}
 						alt="visa icon"
+						className="drop-shadow-lg"
 					/>
 					<Image
 						src="https://torresjdev.github.io/Nextjs-Asset-Host/assets/icons/tech/master-card.svg"
 						height={40}
 						width={40}
 						alt="visa icon"
+						className="drop-shadow-lg"
 					/>
 					<span className="mx-5"></span>
 					<Image
@@ -44,6 +46,7 @@ const DonationJar = () => {
 						height={70}
 						width={70}
 						alt="visa icon"
+						className="drop-shadow-lg"
 					/>
 				</div>
 			</div>
