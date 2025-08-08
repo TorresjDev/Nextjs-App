@@ -21,7 +21,7 @@ export default function Home() {
 			<div className="flex p-3 mb-2 mx-auto justify-center">
 				<TextGenerateEffect filter={true} duration={3} words={words} />
 				<div
-					className={`transition-opacity duration-500 ease-in-out ${
+					className={`transition-opacity duration-500 ease-in-out font-bold drop-shadow-2xl subpixel-antialiased${
 						showImage ? "opacity-100" : "opacity-0"
 					}`}
 				>
@@ -35,7 +35,7 @@ export default function Home() {
 					/>
 				</div>
 			</div>
-			<p className="text-silver/80 mb-3">
+			<p className="text-silver/80 mb-3 drop-shadow-2xl antialiased font-semibold">
 				Your support directly fuels my open source projects and allows me to
 				continue innovating new software. 💻
 			</p>
