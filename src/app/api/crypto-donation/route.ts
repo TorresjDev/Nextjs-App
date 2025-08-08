@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import axios, { AxiosResponse } from "axios";
 
+// Validate environment variable exists
 const COINBASE_API_KEY = process.env.COINBASE_API_KEY;
+
+if (!COINBASE_API_KEY) {
+	console.error("COINBASE_API_KEY is not defined in environment variables");
+}
 
 interface CoinbaseResponse {
 	data: {
@@ -12,7 +17,21 @@ interface CoinbaseResponse {
 
 export async function POST(request: Request) {
 	try {
+		// Check if API key is available
+		if (!COINBASE_API_KEY) {
+			console.error("Missing COINBASE_API_KEY environment variable");
+			return NextResponse.json(
+				{ error: "Coinbase API configuration error" },
+				{ status: 500 }
+			);
+		}
+
 		const { amount } = await request.json();
+
+		console.log(
+			"Creating Coinbase charge with API key:",
+			COINBASE_API_KEY ? "***PRESENT***" : "MISSING"
+		);
 
 		// Create the charge using Coinbase Commerce API
 		const response: AxiosResponse<CoinbaseResponse> = await axios.post(
