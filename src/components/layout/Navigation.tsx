@@ -15,7 +15,7 @@ export default function Navigation() {
 							height="45"
 						/>
 						<p className="font-extrabold ps-1 ms-1 md:ms-3 text-3xl text-[#DAA520]/90">
-							JT Dev Studio
+							Dev Studio
 						</p>
 
 						<div className="animate-flareSpark">
