@@ -143,8 +143,8 @@ const Footer = () => {
 			{/* Footer Bottom */}
 			<div className="text-center text-[#C0C0C0]-500 mt-3">
 				<p>
-					Complete - Full Stack Software Developer: Walkthrough Guide <br></br>{" "}
-					&copy; {new Date().getFullYear()} Jesus Torres. All rights reserved.
+					&nbsp; &copy; {new Date().getFullYear()} Jesus Torres. All rights
+					reserved.
 				</p>
 			</div>
 		</footer>
