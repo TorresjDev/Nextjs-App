@@ -44,3 +44,11 @@ export const guideSidebarItems = [
 		],
 	},
 ];
+
+export const supportItems = [
+	{
+		title: "Donate",
+		url: "/support/donations",
+		icon: "💖",
+	},
+];

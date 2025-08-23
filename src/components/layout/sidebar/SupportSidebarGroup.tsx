@@ -7,19 +7,7 @@ import {
 	SidebarMenuItem,
 } from "../../ui/sidebar";
 import Link from "next/link";
-
-const supportItems = [
-	{
-		title: "Support",
-		url: "/support",
-		icon: "💖",
-	},
-	{
-		title: "Donate",
-		url: "/support/donate",
-		icon: "💳",
-	},
-];
+import { supportItems } from "../../../lib/sidebar-config";
 
 export default function SupportSidebarGroup() {
 	return (
